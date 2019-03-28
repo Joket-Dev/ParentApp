@@ -1,0 +1,65 @@
+<ion-header class="nav-header" no-border>
+  <ion-navbar class="navbar" color="primary">
+    <ion-buttons left mode="md">
+      <button menuToggle ion-button icon-only>
+        <img class="menu-icon" src="assets/icon/menu.png">
+      </button>
+    </ion-buttons>
+    <ion-title class="nav-title">Complaints</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="openNotificationsPage()">
+        <ion-icon name="ios-notifications-outline" color="white"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="extended-nav-color"></div>
+  <section class="overlay-box">
+    <section class="type">
+      <ion-segment mode="ios" [(ngModel)]="type">
+        <ion-segment-button value="open">
+          Open
+        </ion-segment-button>
+        <ion-segment-button value="closed">
+          Closed
+        </ion-segment-button>
+      </ion-segment>
+    </section>
+
+    <div class="complaint" *ngFor="let i of [1,2,3,4]" (click)="openInfo()">
+      <div class="description">
+        <h1 class="title">Wrong Amount Deducted</h1>
+        <p>
+          Responded by John Doe
+          <span>
+            21 June 2018, 9:30 PM
+          </span>
+        </p>
+      </div>
+      <span class="status">Open</span>
+    </div>
+    <div class="complaint" *ngFor="let i of [1,2,3,4]" (click)="openInfo()">
+      <div class="description">
+        <h1 class="title">Wrong Amount Deducted</h1>
+        <p>
+          Responder: John Doe,
+          <span>
+            21 June 2018, 9:30 PM
+          </span>
+        </p>
+      </div>
+      <span class="status close">Closed</span>
+    </div>
+
+  </section>
+
+
+</ion-content>
+<ion-footer>
+  <section class="footer-btn">
+    <button class="button" (click)="openNewComplaintPage()">New Complaint</button>
+  </section>
+</ion-footer>

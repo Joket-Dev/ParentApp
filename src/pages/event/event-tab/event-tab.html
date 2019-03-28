@@ -1,0 +1,22 @@
+<ion-content no-padding>
+  <div class="extended-nav-color"></div>
+  <div class="overlay-box">
+    <div>
+      <ion-row *ngFor="let event of eventList;" class="custom-list list-border" (click)="openEventDetails()" style="padding: 8px 0px;">
+        <ion-col col-2>
+          <ion-avatar item-start class="school-avatar">
+            <img src="https://ionicframework.com/dist/preview-app/www/assets/img/avatar-ts-woody.png">
+          </ion-avatar>
+        </ion-col>
+        <ion-col col-7 text-left>
+          <h6 no-margin text-bold>{{event.title}}</h6>
+          <p no-margin class="detail">{{event.author}}&nbsp;&#9679; {{event.replies}} replies</p>
+        </ion-col>
+        <ion-col col-3>
+          <p no-margin class="creater">{{event.created_by}}</p>
+          <p no-margin>{{event.time}}</p>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div> 
+</ion-content>

@@ -1,0 +1,147 @@
+page-attendance {
+  .overlay-box{
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100% - 1em);
+  }
+
+  //calendar
+
+  .wrapper-vertically-limited {
+    width: 100%;
+    height: 350px;
+    padding: 1em;
+  }
+
+  .custom-month {
+    border: none;
+    background: white;
+    color:#fe6f3d;
+    padding: 1.6em 0.8em;
+    border-radius: 10px;
+    font-weight: bolder;
+
+    .row{
+      margin-bottom: 1em;
+    }
+  }
+
+  .custom-month > .row:nth-child(1){
+    margin-bottom: 2em;
+  }
+
+  .month__caption{
+    display: flex;
+    justify-content: space-around;
+    font-weight: bolder;
+    ion-icon{
+      font-size: 1.6em;
+      font-weight: bold;
+    }
+  }
+
+  .month__day{
+    padding: 5px;
+    margin-top: 3px;
+    border-radius: 30px;
+  }
+
+  .month__day--selected{
+    // background: #3f51b5 !important;
+    background: #fe6f3d !important;
+    color: white !important;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+  }
+
+  .absent-day {
+    background: #e91e63;
+    //border: 1px solid  #e91e63;
+    color: white;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+  }
+
+  .leave-day {
+    background: #ff9800;
+    //border: 1px solid black;
+    color: white;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+  }
+
+  .holiday{
+    color: green;
+  }
+
+  .holidayCaption{
+    color: green;
+  }
+
+
+//  progress
+.progress-heading{
+  text-transform: uppercase;
+  font-size: 1.2em;
+  font-weight: bold;
+  letter-spacing: 3px;
+  opacity: 0.5;
+}
+  .progress-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    animation: scaleup 0.4s ease-in-out;
+  }
+
+  @keyframes scaleup {
+    0% {
+      transform: scale(0);
+      -webkit-transform: scale(0);
+    }
+    100% {
+      transform: scale(1.0);
+      -webkit-transform: scale(1.0);
+    }
+  }
+
+  .progress-percentage-wrapper {
+    position: relative;
+    margin: 1em;
+  }
+  .progress-percentage {
+    position: absolute;
+    color: #fe6f3d;
+    width: 100%;
+    font-weight: bolder;
+    text-align: center !important;
+    top: calc(50% - 1.8em);
+    transform: translate(0, -50%);
+  }
+
+  .caption{
+    font-size: 0.8em;
+  }
+
+
+
+  //action buttons
+  .actions{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 0 2em;
+
+    button{
+      padding: 1em 2em;
+      background: #fe6f3d;
+      border: 2px solid #f6e6d7;
+      color: white;
+      margin-bottom:1em ;
+    }
+  }
+
+
+
+}

@@ -1,0 +1,179 @@
+page-answers {
+  &.ion-page{
+    height: 101% !important;;
+  }
+  .scroll-content,.fixed-content{
+    margin-bottom: 5px;
+  }
+  .overlay-box {
+    padding-bottom: 2em;
+    position: relative;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .head {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      .nav-arrow {
+        background: transparent;
+      }
+
+
+      h1 {
+        font-size: 1.2em;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      h2 {
+        font-size: 1em;
+        font-weight: bold;
+        margin: 0;
+      }
+
+      p {
+        font-size: 0.8em;
+      }
+    }
+
+    .questions {
+      padding: 2em;
+    }
+
+    .question {
+
+      .card {
+        margin: 0.5em;
+        padding: 0.6em;
+        border: 1px solid lightgrey;
+        border-radius: 10px;
+      }
+      .statement {
+        display: flex;
+        flex-direction: row;
+
+        p {
+          flex: 1;
+          margin: 0;
+          text-align: left;
+          margin-left: 1em;
+          margin-bottom: 0.5em;
+          font-size: 0.8em;
+        }
+      }
+
+      .response {
+        display: flex;
+        padding: 0 1em;
+
+        label {
+         // background: rgb(254, 111, 61);
+          display: inline-block;
+          padding: 0 0.6em;
+          color: black;
+        }
+
+        input{
+          margin-right: 6px;
+        }
+      }
+    }
+
+    .marks-card{
+      display: flex;
+      flex-direction: column;
+      padding: 1em;
+      border: 1px solid lightgrey;
+      width: 90%;
+      margin: auto;
+      h1{
+        font-size: 1.2em;
+        text-transform: uppercase;
+      }
+      button{
+        display: block;
+        background: rgb(254,111,61);
+        padding: 0.8em 1em;
+        color: white;
+        text-transform: uppercase;
+        margin-bottom: 1em;
+      }
+    }
+
+  }
+
+  //radio buttons
+
+  input[type='radio']:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #d1d3d1;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+  }
+
+  input[class='radio-red']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color:red;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+  }
+
+  input[class='radio-green']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: green;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+  }
+
+
+
+  //top 3 layer design
+  .overlay-box::before {
+    position: absolute;
+    content: '';
+    width: 88%;
+    height: 10%;
+    top: -20px;
+    left: 6%;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    z-index: -5;
+  }
+  .overlay-box::after{
+    position: absolute;
+    content: '';
+    width: 94%;
+    height: 10%;
+    top: -10px;
+    left: 3%;
+    z-index: -4;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.7);
+  }
+}

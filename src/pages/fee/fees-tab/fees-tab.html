@@ -1,0 +1,12 @@
+<ion-content no-padding>
+    <div >
+    <ion-list>
+      <ion-item class="fee" *ngFor="let i of [0,1,2,3];" (click)="openInfo()">
+        <h2><span text-capitalize>{{feeType}}</span> fee</h2>
+        <p>Last date: <span>21 July 2018</span></p>
+        <button class="info-btn">info</button>
+        <p class="amount" item-right>255 Rs</p>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

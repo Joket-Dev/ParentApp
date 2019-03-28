@@ -1,0 +1,38 @@
+<ion-header class="nav-header" no-border>
+  <ion-navbar class="navbar" color="primary">
+    <ion-buttons left mode="md">
+      <button menuToggle ion-button icon-only>
+        <img class="menu-icon" src="assets/icon/menu.png">
+      </button>
+    </ion-buttons>
+    <ion-title class="nav-title">New Showcase</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="openNotificationsPage()">
+        <ion-icon name="ios-notifications-outline" color="white"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="extended-nav-color"></div>
+  <div class="overlay-box">
+    <ion-item class="flex-column">
+      <ion-label>TITLE</ion-label>
+      <ion-input placeholder="Enter title"></ion-input>
+    </ion-item>
+
+    <ion-item class="flex-column">
+      <ion-label >DESCRIPTION</ion-label>
+      <ion-textarea placeholder="Enter a description" rows="7"></ion-textarea>
+    </ion-item>
+
+    <p class="attachment">
+      Attachment
+      <ion-icon name="md-attach"></ion-icon>
+    </p>
+
+    <button class="button">SUBMIT</button>
+  </div>
+</ion-content>

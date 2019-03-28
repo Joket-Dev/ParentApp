@@ -1,0 +1,25 @@
+
+
+<ion-content class="content">
+    <div class="drawing">
+        <img class="bg" src="assets/imgs/login-bg.svg">
+
+        <div class="circle card-shadow">
+            <h1>Students</h1>
+        </div>
+    </div>
+
+    <section class="mobile-section">
+        <p>{{mobile_number}}</p>
+        <ion-item>
+            <ion-input type="text" value="" [(ngModel)]="otp" placeholder="Please Enter The OTP"></ion-input>
+        </ion-item>
+
+        <button class="button" (click)="login()">Login</button>
+    </section>
+
+    <button class="back-btn" (click)="openSendOtpPage()" ion-button outline item-end icon-start>
+        <ion-icon name="md-arrow-back"></ion-icon>
+        Back
+    </button>
+</ion-content>

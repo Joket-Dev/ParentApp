@@ -1,0 +1,50 @@
+<ion-header class="nav-header" no-border>
+  <ion-navbar class="navbar" color="primary">
+    <ion-title class="nav-title">
+      <span *ngIf="type !== 'Complaint'">Information</span>
+      <span *ngIf="type == 'Complaint'">Complaint</span>
+    </ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="closeModal()">
+        <ion-icon name="md-close" color="white"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+<ion-content>
+  <section class="wrapper" *ngIf="type == 'Pending fee'">
+      <img src="assets/placeholders/question-paper.png" imageViewer class="receipt-img"/>
+    <h1>{{type}} notice </h1>
+    <p>​Dear Parent, you are requested to pay the school fees before 25 July, 2019. Ignore if already paid. -Ryan
+      School, Colaba, Mumbai.
+    </p>
+    <p>​Your ward’s next fee installment is due on 20 July, 2019. Kindly pay before 20 July, 2019. Ignore if already
+      paid. -Vasant School, Kalbadevi, Mumbai.</p>
+  </section>
+  <section *ngIf="type == 'Paid fee'" class="wrapper">
+      <img src="assets/placeholders/question-paper.png" imageViewer class="receipt-img"/>
+    <p>Dear Parent, time table of the II round test has been sent with your ward. -Kidz School, Lokhandwala, Mumbai.</p>
+    ​<p>Dear Parent, we wish your ward all the best for the SSLC Exam. -Indian School, Versova, Mumbai.</p>
+    <p>​Dear Parent, your ward’s II round test marks details are Eng: 78, Sci: 89, SS: 88. -Bharath School, CBD
+      Belapur, Navi Mumbai.</p>
+    ​<p>Dear Teacher, you have GTU examination duty on 20 Mar, 2019. Please be present in the staff room at 8:15 am.
+      -National School, Bandra, Mumbai.</p>
+
+  </section>
+  <section *ngIf="type == 'Complaint'">
+    <p>I am the mother of Lucy White who is in 7th grade at Anytown Middle School, and I am writing to you today
+      because I am very concerned about the current lunches offered by the school cafeteria. When I looked over the
+      menu Lucy brought home from school, I noticed that there were no vegetarian options and very few meals other than
+      pizza and cheeseburgers.</p>
+    <p>Middle school students are often not very good at making healthy choices on their own. They rely on parents and
+      schools to limit their choices so that they can make good decisions within certain parameters. No middle school
+      student who has the opportunity to eat pizza every day will turn that opportunity down. As such, you are creating
+      the conditions for obesity at your school.</p>
+    <p> Sincerely,</p>
+
+  </section>
+  <section *ngIf="type == 'Notification'" class="wrapper">
+    <p>Dear Students, On 20-3-2014 guest lecture is arranged on ” Power Electronics” by Prof. Dr. Shastri Shergil. at 11.00 am. Attendance is compulsory.</p>
+  </section>
+</ion-content>

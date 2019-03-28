@@ -1,0 +1,182 @@
+page-dashboard {
+  .toolbar-title {
+    color: white !important;
+  }
+
+  .content-bg {
+    position: absolute;
+    left: 0;
+    top: -80px;
+    z-index: -1;
+  }
+
+  .navigation {
+    z-index: 999;
+    background: white;
+    width: 95%;
+    margin: auto;
+    border-radius: 10px;
+    padding: 1.5em;
+  }
+
+  .row {
+    display: flex;
+  }
+
+  .border-bottom{
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .hero-btn {
+    width: 33%;
+    padding: 1em 0.3em 0.5em 0.3em;
+
+    img {
+      width: 28px;
+      height: 28px;
+    }
+    ion-icon{
+      font-size: 1.6em;
+    }
+    p{
+      margin-top: 0.5em;
+    }
+  }
+
+  .row .hero-btn:nth-child(n+2){
+    border-left: 1px solid #e0e0e0;
+  }
+
+  .hero-btn:active{
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: all ease 0.2s;
+  }
+
+  .checkin {
+    background: white;
+    width: 95%;
+    margin: auto;
+    margin-top: 1em;
+    padding: 1em 0.2em;
+    border-radius: 10px;
+    .head {
+      display: flex;
+      flex-direction: row;
+
+      p{
+        width: 45%;
+      }
+    }
+
+  }
+
+  .segment-button {
+    border-bottom-style: none !important;
+    color: #2d2d2d !important;
+    font-size: 0.7em !important;
+    //height: auto !important;
+    //line-height: 0 !important;
+  }
+
+  .segment-activated{
+    color: rgb(254,111,61) !important;
+  }
+
+
+  .notifications{
+    margin-left: 0.6em;
+    .item{
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      min-width: 45%;
+      padding: 1em 1em;
+      margin-right: 0.6em;
+    }
+
+    .item:active{
+      box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2);
+      transition: all ease 0.2s;
+    }
+
+    h1,p {
+      padding: 0;
+      margin: 0;
+    }
+
+    p{
+      font-size: 0.6em;
+      color: gray;
+    }
+
+    .head{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      img{
+        width: 40px;
+        height: 40px;
+        margin-top: 0.2em;
+        margin-left: 0.4em;
+      }
+      h1{
+        font-size: 1.1em;
+        font-weight: bold;
+        color: rgb(254,111,61);
+        text-transform: uppercase;
+      }
+
+    }
+
+    .quote{
+      margin-top: 1em;
+    }
+
+    .date{
+      margin-top: 0.6em;
+      text-align: right;
+    }
+  }
+
+  .green{
+    color: #89C438;
+  }
+
+  .orange{
+    color:#F9A94B;
+  }
+
+  .offblue{
+    color: #27B4AC;
+  }
+
+  .darpink{
+    color: #FD6978;
+  }
+
+  .purple{
+    color: #8D1D8A;
+  }
+
+  .darkthik{
+    color: #A97C50;
+  }
+
+  .marron{
+    color: #B21016;
+  }
+
+  .lgreen{
+    color: #00B050;
+  }
+
+  .yellow{
+    color: #FFC000;
+  }
+
+
+
+}
+
+
+

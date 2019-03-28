@@ -1,0 +1,108 @@
+<ion-header class="nav-header" no-border>
+  <ion-navbar class="navbar" color="primary">
+    <ion-buttons left mode="md">
+      <button menuToggle ion-button icon-only>
+        <img class="menu-icon" src="assets/icon/menu.png">
+      </button>
+    </ion-buttons>
+    <ion-title class="nav-title">
+      John
+      <p (click)="openShowcaseProfilePage()">View Profile</p>
+    </ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="openNotificationsPage()">
+        <ion-icon name="ios-notifications-outline" color="white"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="extended-nav-color"></div>
+  <div class="overlay-box">
+
+    <ion-slides #slides >
+      <ion-slide *ngFor="let i of [0,1,2,3,1,1,1]; i as index">
+        <section class="resource">
+          <!-- <ion-slides #slides class="slides" spaceBetween="0" slidesPerView="2.5">
+        <ion-slide class="slide" *ngFor="let i of [0,1,2,3,1,1,1]; i as index">
+          <img src="assets/imgs/placeholder-img-kid.jpg">
+        </ion-slide>
+      </ion-slides> -->
+          <h5> John Carter </h5>
+          <div class="forum-images" (touchstart)="stopSliding($event)" (touchend)="startSliding($event)">
+            <img src="assets/imgs/placeholder-img-kid.jpg" imageViewer *ngFor="let i of [0,1,2,3,1,1,1]; i as index">
+          </div>
+          <p margin-bottom>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type and scrambled it to make a type
+            specimen book. It has survived not only five centuries, but also the leap into
+            electronic typesetting, remaining essentially unchanged. It was popularised in
+            the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus PageMaker including
+            versions of Lorem Ipsum.
+          </p>
+          <!-- <div class="actions">
+                <span class="action">
+                    <ion-icon name="{{isLoved? 'md-heart' : 'md-heart-outline'}}"
+                              color="{{isLoved? 'danger' : 'green'}}"
+                              (click)="toggleLoved()"></ion-icon>
+                    1
+                </span>
+                <ion-icon class="action" name="md-share-alt"></ion-icon>
+            </div> -->
+        </section>
+
+        <section class="comments">
+          <h1 class="sub-header">
+            <span>Comments</span>
+            <div class="actions">
+              <span class="action">
+                <ion-icon name="{{isLoved? 'md-heart' : 'md-heart-outline'}}" color="{{isLoved? 'danger' : 'green'}}"
+                  (click)="toggleLoved()"></ion-icon>
+                1
+              </span>
+              <ion-icon class="action" name="md-share-alt"></ion-icon>
+            </div>
+          </h1>
+          <div class="comment" *ngFor="let i of [1,2]">
+            <div class="avatar">
+              <img src="https://d3iw72m71ie81c.cloudfront.net/female-94.jpg">
+            </div>
+            <div class="details">
+              <h2>John Doe</h2>
+              <p>Contrary to popular belief, Lorem Ipsum is not simply random text.
+                It has roots in a piece of classical Latin literature from 45 BC,
+              </p>
+              <div class="actions" text-right>
+                <span class="action">
+                  <ion-icon name="{{isLoved? 'md-heart' : 'md-heart-outline'}}" color="{{isLoved? 'danger' : 'green'}}"
+                    (click)="toggleLoved()"></ion-icon>
+                  1
+                </span>
+                <ion-icon class="action" name="md-share-alt"></ion-icon>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-item style="    overflow: inherit;contain: unset;">
+    <!-- <button ion-button clear icon-only (click)="toggled = !toggled" [(emojiPickerIf)]="toggled" [emojiPickerDirection]="'top'"
+      (emojiPickerSelect)="handleSelection($event)"> -->
+    <!-- </button> -->
+
+    <ion-textarea placeholder="write a comment" [(ngModel)]="message" name="comment" id="comment" row="1" (ionChange)="changeCommentBox()"></ion-textarea>
+    <ion-icon name="md-happy" color="primary" (click)="toggled = !toggled" [(emojiPickerIf)]="toggled"
+      [emojiPickerDirection]="'top'" (emojiPickerSelect)="handleSelection($event)" item-left></ion-icon>
+    <ion-icon name="ios-send" color="primary" item-right></ion-icon>
+  </ion-item>
+</ion-footer>

@@ -1,0 +1,45 @@
+<ion-header class="nav-header" no-border>
+    <ion-navbar class="navbar" color="primary">
+        <ion-buttons left mode="md">
+            <button menuToggle ion-button icon-only>
+                <img class="menu-icon" src="assets/icon/menu.png">
+            </button>
+        </ion-buttons>
+        <ion-title class="nav-title">Library</ion-title>
+        <ion-buttons right>
+            <button ion-button icon-only (click)="openNotificationsPage()">
+                <ion-icon name="ios-notifications-outline" color="white"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+    <div class="extended-nav-color"></div>
+    <div class="overlay-box">
+        <ion-item class="flex-column">
+            <ion-select placeholder="Select Category" interface="action-sheet">
+                <ion-option>Science Fiction</ion-option>
+                <ion-option>Detective</ion-option>
+            </ion-select>
+        </ion-item>
+
+        <ion-item class="flex-column">
+            <ion-select placeholder="Select Sub-Category" interface="action-sheet">
+                <ion-option>Travel</ion-option>
+                <ion-option>General</ion-option>
+            </ion-select>
+        </ion-item>
+
+        <section class="gallery">
+            <div class="item" *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]">
+                <img src="assets/placeholders/book-cover.jpg">
+            </div>
+        </section>
+    </div>
+</ion-content>
+
+<ion-footer>
+    <button class="footer-btn" (click)="openBorrowedBooksPage()">Borrowed Book</button>
+</ion-footer>

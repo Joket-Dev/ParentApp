@@ -1,0 +1,61 @@
+<!-- <script src="../../app/app.component.ts"></script> -->
+<ion-header class="nav-header" no-border>
+    <ion-navbar class="navbar" color="primary">
+        <ion-buttons left mode="md">
+            <button menuToggle ion-button icon-only>
+                <img class="menu-icon" src="assets/icon/menu.png">
+            </button>
+        </ion-buttons>
+        <ion-title class="nav-title">Practice Test</ion-title>
+        <ion-buttons right>
+            <button ion-button icon-only (click)="openNotificationPage()">
+                <ion-icon name="ios-notifications-outline" color="white"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content class="bg-primary-gradient">
+    <section class="overlay-box">
+        <div class="head">
+            <button (click)="prevQues()" icon-only class="nav-arrow">
+                <ion-icon name="md-arrow-back"></ion-icon>
+            </button>
+
+            <div class="test-info">
+                <h1>English</h1>
+                <p>Mid term</p>
+                <h2>M.Q Paper 1</h2>
+                <p>(2 hours)</p>
+            </div>
+
+            <button (click)="nextQues()" icon-only class="nav-arrow">
+                <ion-icon name="md-arrow-forward"></ion-icon>
+            </button>
+        </div>
+        <ion-slides #questions class="questions" (ionSlideReachEnd)="onLastSlide()">
+            <ion-slide class="question" *ngFor="let i of [0,1,2,3]; i as index">
+                <div class="card">
+                    <div class="statement">
+                        <span>{{i + 1}}. </span>
+                        <p> Contrary to popular belief, Lorem Ipsum is not simply random text.
+                            It has roots in a piece </p>
+                    </div>
+                    <div class="response">
+                        <label><input type="radio" name="response" value="yes"> Yes</label>
+                        <label><input type="radio" name="response" value="no"> No</label>
+                    </div>
+                </div>
+
+            </ion-slide>
+
+        </ion-slides>
+
+        <section class="marks-card" *ngIf="showResult">
+            <h1>Total Marks: 80/100</h1>
+            <button (click)="openAnswersPage()">View Answers</button>
+            <!-- <button>History</button> -->
+        </section>
+    </section>
+</ion-content>

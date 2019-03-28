@@ -1,0 +1,22 @@
+<ion-card>
+    <ion-item class="post">
+        <ion-avatar item-left>
+            <img src="assets/placeholders/face.jpg" imageViewer>
+        </ion-avatar>
+
+        <div class="description" (click)="openForumPostDetailsPage()">
+            <h2>This is a title- {{FormType}}</h2>
+            <p>Alise Wonder</p>
+            <button class="info-btn">24 replies</button>
+        </div>
+
+
+        <div class="right" item-right>
+            <ion-icon (click)="toggleLoved()"
+                      name="{{isLoved? 'md-heart' : 'md-heart-outline'}}"
+                      color="primary">
+            </ion-icon>
+            <p class="date">21 July 2018</p>
+        </div>
+    </ion-item>
+</ion-card>

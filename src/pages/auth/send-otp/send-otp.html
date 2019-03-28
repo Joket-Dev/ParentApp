@@ -1,0 +1,18 @@
+<ion-content class="content">
+  <div class="drawing">
+    <img class="bg" src="assets/imgs/login-bg.svg">
+
+    <div class="circle card-shadow">
+      <h1>Students</h1>
+    </div>
+  </div>
+
+  <section class="mobile-section">
+    <p>Mobile Number</p>
+    <ion-item>
+      <ion-input type="text" value="" [(ngModel)]="mobile_number" placeholder="Please Enter your mobile number"></ion-input>
+    </ion-item>
+
+    <button class="button" (click)="sendOtp()">SEND OTP</button>
+  </section>
+</ion-content>

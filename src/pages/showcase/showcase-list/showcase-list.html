@@ -1,0 +1,36 @@
+<ion-header class="nav-header" no-border>
+    <ion-navbar class="navbar" color="primary">
+        <ion-buttons left mode="md">
+            <button menuToggle ion-button icon-only>
+                <img class="menu-icon" src="assets/icon/menu.png">
+            </button>
+        </ion-buttons>
+        <ion-title class="nav-title">Talent Showcase</ion-title>
+        <ion-buttons right>
+            <button ion-button icon-only (click)="openNotificationsPage()">
+                <ion-icon name="ios-notifications-outline" color="white"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div class="extended-nav-color"></div>
+    <div class="overlay-box">
+        <section class="gallery">
+            <showcase-item *ngFor="let i of [1,2,3,4,5,6,7,8]"></showcase-item>
+        </section>
+    </div>
+
+</ion-content>
+
+<ion-footer>
+    <!-- <section class="stick-at-bottom">
+        <button class="button" (click)="openShowcaseCreatePage()">Showcase your kid talent</button>
+    </section> -->
+    <ion-fab bottom right>
+        <button ion-fab (click)="openShowcaseCreatePage()">
+            <ion-icon name="add"></ion-icon>
+        </button>
+    </ion-fab>
+</ion-footer>

@@ -1,0 +1,51 @@
+page-checkoutdetail {
+  .title-text {
+    margin: 0 !important;
+  }
+
+  .cart-item {
+    padding: 0px 0px 0px 16px !important;
+    margin-bottom: 0px !important;
+    border: none !important;
+
+    &.input-has-focus {
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+    .item-inner{
+        border: none !important;
+    }
+  }
+
+  .apply-btn {
+    height: 100% !important;
+    margin-right: 16px !important;
+    border: none !important;
+  }
+
+  .coupon-input {
+    border: 2px solid #e0e0e0;
+  }
+
+  .coupon-text{
+      min-width: 20%;
+      text-align: right;
+  }
+
+  .radio-btn {
+    box-shadow: none !important;
+    border-radius: 0px !important;
+    letter-spacing: 1px !important;
+    border: none !important;
+    font-size: 14px;
+    border: 1px solid #fe6f3d !important;
+    padding: 2em 3em !important;
+  }
+
+  .non-selected-btn{
+    background: white;
+    
+    color: #fe6f3d !important;
+  }
+}

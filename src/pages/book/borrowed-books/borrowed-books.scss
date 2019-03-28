@@ -1,0 +1,53 @@
+page-borrowed-books {
+
+  .book-list{
+    padding: 1em;
+  }
+
+  .book{
+    margin-bottom: 1.4em;
+  }
+
+  .row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    // border: 1px solid #fe6f3d;
+    padding: 0.5em;
+  }
+
+  .book-cover{
+    max-width: 30%;
+    max-height: 8em;
+    overflow: hidden;
+  }
+
+  .dates{
+    align-self: center;
+
+    p{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    ion-icon{
+      font-size: 2em;
+      font-weight: bold;
+      margin-right: 0.3em;
+    }
+  }
+
+  .book-footer{
+    justify-content: center;
+    border-top: none !important;
+    padding: 0 !important;
+
+    p{
+      margin: 0.5em;
+      font-weight: bold;
+    }
+  }
+}
+

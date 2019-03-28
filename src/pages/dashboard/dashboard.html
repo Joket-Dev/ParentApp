@@ -1,0 +1,115 @@
+<ion-header class="nav-header" no-border>
+  <ion-navbar class="navbar" color="primary">
+    <ion-buttons left mode="md">
+      <button ion-button menuToggle icon-only start slot="start">
+        <img class="menu-icon" src="assets/icon/menu.png">
+      </button>
+    </ion-buttons>
+
+
+    <ion-title class="nav-title" (click)="openEmptyPage()">John</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="openNotificationsPage()">
+        <ion-icon name="ios-notifications-outline" color="white"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="content">
+  <img class="content-bg" src="assets/imgs/circle-bg.svg">  
+  <section class="navigation">
+    <div class="row border-bottom">
+      <div class="hero-btn" (click)="openAttendancePage()">
+        <ion-icon name="md-checkbox-outline" class="dashgrid_icon green"></ion-icon>
+        <p>Attendance</p>
+      </div>
+      <div class="hero-btn" (click)="openHomeWorkPage()">
+        <ion-icon name="ios-brush-outline" class="dashgrid_icon orange"></ion-icon>
+        <p>Home Work</p>
+      </div>
+      <div class="hero-btn" (click)="openTodoListPage()">
+        <ion-icon name="ios-list-outline" class="dashgrid_icon offblue"></ion-icon>
+        <p>To-Do</p>
+      </div>
+    </div>
+
+    <div class="row border-bottom">
+      <div class="hero-btn" (click)="openProgerssReportPage()">
+        <ion-icon name="ios-stats-outline" class="dashgrid_icon darpink"></ion-icon>
+        <p>Progress Report</p>
+      </div>
+      <div class="hero-btn" (click)="openExamResultsPage()">
+        <ion-icon name="ios-clipboard-outline" class="dashgrid_icon purple"></ion-icon>
+        <p>Exam Result</p>
+      </div>
+      <div class="hero-btn" (click)="openPracrisetestPage()">
+        <ion-icon name="ios-create-outline" class="dashgrid_icon "></ion-icon>
+        <p>Practice Tests</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="hero-btn" (click)="openFeesPage()">
+        <ion-icon name="ios-cash-outline" class="dashgrid_icon darkthik"></ion-icon>
+        <p>Fees</p>
+      </div>
+      <div class="hero-btn" (click)="openLibraryPage()">
+        <ion-icon name="ios-book-outline" class="dashgrid_icon marron"></ion-icon>
+        <p>Library</p>
+      </div>
+      <div class="hero-btn" (click)="openEventsPage()">
+        <ion-icon name="ios-color-palette-outline" class="dashgrid_icon yellow"></ion-icon>
+        <p>Events</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="checkin top-margin">
+    <div class="head">
+      <p>{{checkinPrefix}} Check in</p>
+
+      <ion-segment [(ngModel)]="checkinPeriod" (ionChange)="checkinPeriodChanged()" class="checkin-periods" mode="md">
+        <ion-segment-button checked value="day">
+          Day
+        </ion-segment-button>
+        <ion-segment-button value="week">
+          Week
+        </ion-segment-button>
+        <ion-segment-button value="month">
+          Month
+        </ion-segment-button>
+        <ion-segment-button value="year">
+          Year
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+
+    <circular-percentages *ngIf="checkinPeriod == 'day'"></circular-percentages>
+    <circular-percentages *ngIf="checkinPeriod == 'week'"></circular-percentages>
+    <circular-percentages *ngIf="checkinPeriod == 'month'"></circular-percentages>
+    <circular-percentages *ngIf="checkinPeriod == 'year'"></circular-percentages>
+
+  </section>
+
+  <ion-scroll scrollX="true" style="width:100vw; height:200px">
+    <ion-row nowrap class="notifications top-margin">
+      <div class="item" *ngFor="let i of [0,1,2,3]">
+        <div class="head">
+          <img src="https://d3iw72m71ie81c.cloudfront.net/male-10.jpg">
+          <div class="name">
+            <h1>John</h1>
+            <p>Senior Coach</p>
+          </div>
+        </div>
+
+        <p class="quote">Master the health, face and Perfect Sales Process <br> Believe Your Choice</p>
+        <p class="date">2017-01-01</p>
+      </div>
+    </ion-row>
+  </ion-scroll>
+
+
+
+</ion-content>

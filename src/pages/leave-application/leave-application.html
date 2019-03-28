@@ -1,0 +1,49 @@
+<ion-header class="nav-header" no-border>
+    <ion-navbar class="navbar" color="primary">
+        <ion-buttons left mode="md">
+            <button menuToggle ion-button icon-only>
+                <img class="menu-icon" src="assets/icon/menu.png">
+            </button>
+        </ion-buttons>
+        <ion-title class="nav-title">Leave Application</ion-title>
+        <ion-buttons right>
+            <button ion-button icon-only (click)="openNotificationsPage()">
+                <ion-icon name="ios-notifications-outline" color="white"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+    <div class="extended-nav-color"></div>
+
+    <div class="overlay-box">
+        <form #leaveApplicationForm (ngSubmit)="submitLeave(leaveApplicationForm)">
+            <ion-item class="flex-column select-round">
+                <ion-label>Select Period</ion-label>
+                <ion-select value="1" interface="action-sheet">
+                    <ion-option value="1" selected>1 days</ion-option>
+                    <ion-option value="2">2 days</ion-option>
+                    <ion-option value="3">3 days</ion-option>
+                    <ion-option value="4">4 days</ion-option>
+
+                </ion-select>
+            </ion-item>
+
+            <ion-item class="flex-column">
+                <ion-label>DESCRIPTION</ion-label>
+                <ion-textarea placeholder="Enter a description" rows="7"></ion-textarea>
+            </ion-item>
+
+            <p class="attachment">
+                <span (click)="openFileInput()" padding-left padding-right>Attachment
+                    <ion-icon name="md-attach"></ion-icon>
+                </span>
+                <input type="file" [hidden]="true" id="leave_application_doc" name="leave_application_doc" (change)="docSelected($event)"/>
+            </p>
+
+            <button class="button">SUBMIT</button>
+        </form>
+    </div>
+</ion-content>

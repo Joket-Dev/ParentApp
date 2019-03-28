@@ -1,0 +1,131 @@
+<ion-header class="nav-header" no-border>
+  <ion-navbar class="navbar" color="primary">
+    <ion-buttons left mode="md">
+      <button menuToggle ion-button icon-only>
+        <img class="menu-icon" src="assets/icon/menu.png">
+      </button>
+    </ion-buttons>
+    <ion-title class="nav-title">
+      Progress Report
+      <p class="status">(Pending to sign)</p>
+
+    </ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="openNotificationsPage()">
+        <ion-icon name="ios-notifications-outline" color="white"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding padding-top padding-bottom id="progrssreportPage">
+  <div class="row" padding-left padding-right>
+    <ion-select placeholder="Year" interface="action-sheet">
+      <ion-option selected value="2019">2019</ion-option>
+      <ion-option value="2018">2018</ion-option>
+    </ion-select>
+
+    <ion-select placeholder="Month" interface="action-sheet">
+      <ion-option value="jan">January</ion-option>
+      <ion-option value="feb">February</ion-option>
+    </ion-select>
+  </div>
+
+
+  <div class="progress-percentage-wrapper row" padding-left padding-right>
+    <div class="progress-percentage ng-cloak">{{70}}%</div>
+    <round-progress [current]="70" [max]="100" [color]="'#fe6f3d'" [background]="'#eaeaea'" [radius]="40" [stroke]="2"
+      [duration]="800" [animation]="'easeInOutQuart'" [animationDelay]="0">
+    </round-progress>
+  </div>
+  <p>Previous Month: 90%</p>
+
+  <section class="reports">
+    <ion-card>
+      <section scrollX="true" class="scrollable-segments">
+        <ion-segment [(ngModel)]="selectedSubject" class="checkin-periods" mode="md" (ionChange)="segmentChanged($event)">
+          <ion-segment-button checked value="hindi">
+            Hindi
+          </ion-segment-button>
+          <ion-segment-button value="english">
+            English
+          </ion-segment-button>
+          <ion-segment-button value="math">
+            Math
+          </ion-segment-button>
+          <ion-segment-button value="science">
+            Science
+          </ion-segment-button>
+        </ion-segment>
+      </section>
+      <table>
+        <tr>
+          <th></th>
+          <th>Current</th>
+          <th>Previous</th>
+        </tr>
+        <tr *ngFor="let report of reportList;let i=index;">
+          <td>{{report.title}}</td>
+          <td>
+            {{report.current+i}}%
+            <ion-icon name="arrow-round-up"></ion-icon>
+          </td>
+          <td>{{report.previous+i}}%</td>
+        </tr>
+
+        <tr class="notes">
+          <td colspan="3" class="notetext">Notes From Teacher</td>
+        </tr>
+
+      </table>
+    </ion-card>
+  </section>
+
+  <section class="reports">
+    <ion-card>
+      <section padding-left padding-right>
+        <table>
+          <tr class="notes">
+            <th colspan="3">
+              <h5>Overall</h5>
+            </th>
+          </tr>
+        </table>
+      </section>
+      <table>
+        <tr>
+          <th></th>
+          <th>Current</th>
+          <th>Previous</th>
+        </tr>
+        <tr *ngFor="let over of overAll;let i=index;">
+          <td>{{over.title}}</td>
+          <td>
+            {{over.current}}%
+            <ion-icon name="arrow-round-up"></ion-icon>
+          </td>
+          <td>{{over.previous}}%</td>
+        </tr>
+
+        <tr class="notes">
+          <td colspan="3" class="notetext">Notes From Teacher</td>
+        </tr>
+
+      </table>
+    </ion-card>
+  </section>
+  <div padding-left padding-right>
+
+    <canvas #imageCanvas (touchstart)="startDrawing($event)" [hidden]="isSigneRemain" (touchend)="stopDrawing($event)" (touchmove)="moved($event)"></canvas>
+
+    <button class="btn-simple" *ngIf='!isSignSubmit && isSigned' margin-top style="margin-bottom:0px;" (click)="isSigned && clearCanvas()">
+      <span >Clear</span>
+    </button>
+    <button class="btn-simple" *ngIf="!isSignSubmit" style="margin-bottom:0px;" margin-top (click)="!isSigned ? isSigneRemain = false :setConfirmation()">
+      <span *ngIf='!isSigned'>I agree to sign</span>
+      <span *ngIf='isSigned'>Submit</span>
+    </button>
+    <p text-center class="primary" *ngIf="isSignSubmit">You have signed.</p>
+    <button class="btn-simple theme-back" (click)="openConfirmationBox()" margin-top>I Want to meet principal</button>
+  </div>
+</ion-content>

@@ -1,0 +1,24 @@
+<ion-header class="nav-header" no-border>
+    <ion-navbar class="navbar" color="primary">
+        <ion-buttons left mode="md">
+            <button ion-button menuToggle icon-only>
+                <img class="menu-icon" src="assets/icon/menu.png">
+            </button>
+        </ion-buttons>
+        <ion-title class="nav-title">Fee</ion-title>
+        <ion-buttons right>
+            <button ion-button icon-only (click)="openNotificationsPage()">
+                <ion-icon name="ios-notifications-outline" color="white"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content class="bg-primary-gradient">
+    <section class="btn-list">
+        <button class="btn-simple" (click)="openPendingFeesPage()">Pending fee</button>
+        <button class="btn-simple" (click)="openPaidFeesPage()">Paid Fee</button>
+        <button class="btn-simple" (click)="openComplaintListPage()">Complaints</button>
+    </section>
+</ion-content>

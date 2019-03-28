@@ -1,0 +1,50 @@
+<ion-header class="nav-header" no-border>
+    <ion-navbar class="navbar" color="primary">
+        <ion-buttons left mode="md">
+            <button menuToggle ion-button icon-only>
+                <img class="menu-icon" src="assets/icon/menu.png">
+            </button>
+        </ion-buttons>
+        <ion-title class="nav-title">New Complaint</ion-title>
+        <ion-buttons right>
+            <button ion-button icon-only  (click)="openNotificationsPage()">
+                <ion-icon name="ios-notifications-outline" color="white"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+    <div class="extended-nav-color"></div>
+    <div class="overlay-box">
+        <form #newCompaintForm (ngSubmit)="submitComplaint(newCompaintForm)">
+            <ion-item class="flex-column">
+                <ion-label>TITLE</ion-label>
+                <ion-select interface="action-sheet">
+                    <ion-option selected>Wrong amount deducted</ion-option>
+                    <ion-option>Black Olives</ion-option>
+                    <ion-option>Extra Cheese</ion-option>
+                    <ion-option>Mushrooms</ion-option>
+                    <ion-option>Pepperoni</ion-option>
+                    <ion-option>Sausage</ion-option>
+                </ion-select>
+            </ion-item>
+
+            <ion-item class="flex-column">
+                <ion-label>DESCRIPTION</ion-label>
+                <ion-textarea placeholder="Enter a description"></ion-textarea>
+            </ion-item>
+
+            <p class="attachment">
+                <span (click)="openFileInput()" padding-left padding-right>
+                    Attachment
+                    <ion-icon name="md-attach"></ion-icon>
+                    <input type="file" [hidden]="true" id="new_complaint_doc" name="new_complaint_doc" (change)="docSelected($event)"/>
+                </span>
+            </p>
+
+            <button class="button">SUBMIT</button>                                      
+        </form>
+    </div>
+</ion-content>

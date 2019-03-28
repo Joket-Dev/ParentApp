@@ -1,0 +1,37 @@
+page-orders {
+    ion-toolbar.scrollable-segments {
+        ion-segment {
+          display: block;
+          overflow-x: scroll;
+          white-space: nowrap;
+      
+          ion-segment-button.segment-button {
+            display: inline-block;
+            width: auto;
+          }
+        }
+      }
+      
+      ion-item{
+        padding: 0px 0px 0px 16px !important;
+        margin: 0px !important;      
+        border-radius: 0 !important;
+      }
+      
+      .item-inner{
+        padding: 0.4em 1em !important;      
+      }
+      
+      .amount{
+        font-size: 1.1em;
+        font-weight: bolder;
+      }
+      
+      .info-btn{
+        background: rgb(254, 111, 61);
+        color: white;
+        padding: 0.4em 0.6em;
+        border-radius: 2em;
+        margin-top: 0.8em;
+      }
+}

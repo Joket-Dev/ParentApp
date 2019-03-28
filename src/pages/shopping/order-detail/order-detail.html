@@ -1,0 +1,42 @@
+<ion-header class="nav-header" no-border>
+  <ion-navbar class="navbar" color="primary">
+    <ion-buttons left mode="md">
+      <button menuToggle ion-button icon-only>
+        <img class="menu-icon" src="assets/icon/menu.png">
+      </button>
+    </ion-buttons>
+    <ion-title class="nav-title">Order Detail</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="openNotificationsPage()">
+        <ion-icon name="ios-notifications-outline" color="white"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <section class="wrapper">
+    <h4>Order no:1587</h4>
+    <ion-icon color="primary" class="tick" name="checkmark-circle"></ion-icon>
+    <h1 no-margin *ngIf="type == 'all'">Completed</h1>
+    <h1 no-margin *ngIf="type !== 'all'" text-capitalize>{{type}}</h1>
+    <p margin-top>Uniform set</p>
+    <p>Order Date: 10/10/2019</p>
+    <p margin-top>Delivered to : Adam Houtou</p>
+    <p>On: 10/10/2019</p>
+    <ion-avatar><img src="assets/imgs/paytm-logo.png"></ion-avatar>
+    <p>Reference number : 14535247896524</p>
+    <ion-item class="select-round" *ngIf="type !== 'checkout'" >
+      <ion-select placeholder="Select type" interface="action-sheet" name="action" (ionChange)="changeOption(selection)" [(ngModel)]="selection">
+        <ion-option value="refunded" *ngIf="type == 'all' || type == 'refunded'">Refund</ion-option>
+        <ion-option value="completed">Exchange</ion-option>
+        <ion-option value="pending">Cancel Order</ion-option>
+      </ion-select>
+    </ion-item>
+    <!-- <button class="button" *ngIf="type == 'all' || type == 'refunded'" (click)="openConfirmation(type,'Request to Refund')">Request to Refund</button>
+    <button class="button" *ngIf="type == 'completed'" (click)="openConfirmation(type,'Request to Return')">Request to Return</button>
+    <button class="button" *ngIf="type == 'pending'" (click)="openConfirmation(type,'Request to Cancel')">Request to Cancel</button> -->
+    <button class="button" *ngIf="type == 'checkout'" (click)="openConfirmation(type,'Cancel Order')">Cancel Order</button>
+  </section>
+</ion-content>

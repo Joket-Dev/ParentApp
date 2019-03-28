@@ -1,0 +1,118 @@
+<ion-header class="nav-header" no-border>
+    <ion-navbar class="navbar" color="primary">
+        <ion-buttons left mode="md">
+            <button ion-button menuToggle icon-only>
+                <img class="menu-icon" src="assets/icon/menu.png">
+            </button>
+        </ion-buttons>
+        <ion-title class="nav-title">
+            Issue ID - 8X201
+            <h1 class="issue-heading">Wrong amount deducted</h1>
+        </ion-title>
+        <ion-buttons right>
+            <button ion-button icon-only (click)="openNotificationsPage()">
+                <ion-icon name="ios-notifications-outline" color="white"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+
+    <div class="messaging">
+
+        <div class="message incoming">
+            <div class="message-box">
+                <div class="avatar">
+                    <img src="assets/placeholders/face.jpg">
+                </div>
+                <div class="talk-bubble">
+                    <div class="talktext">
+                        <p>And now using .round we can smooth the sides down. Also uses .btm-left to show a triangle at the bottom flush to the left.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="attachments">
+                <div class="attachment">
+                    <img src="assets/placeholders/face.jpg" alt="">
+                </div>
+                <div class="attachment">
+                    <img src="assets/placeholders/face.jpg" alt="">
+                </div>
+            </div>
+            <p class="datetime">12 July 2018, 9:20 PM</p>
+        </div>
+
+        <div class="message outgoing">
+            <div class="message-box">
+                <div class="avatar">
+                    <img src="assets/placeholders/face.jpg">
+                </div>
+                <div class="talk-bubble">
+                    <div class="talktext">
+                        <p>And now using .round we can smooth the sides down. Also uses .btm-left to show a triangle at the bottom flush to the left.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="attachments">
+                <div class="attachment">
+                    <img src="assets/placeholders/face.jpg" alt="">
+                </div>
+                <div class="attachment">
+                    <img src="assets/placeholders/face.jpg" alt="">
+                </div>
+            </div>
+            <p class="datetime">12 July 2018, 9:20 PM</p>
+        </div>
+
+        <div class="message incoming">
+            <div class="message-box">
+                <div class="avatar">
+                    <img src="assets/placeholders/face.jpg">
+                </div>
+                <div class="talk-bubble">
+                    <div class="talktext">
+                        <p>And now using .round we can smooth the sides down. Also uses .btm-left to show a triangle at the bottom flush to the left.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="attachments"></div>
+            <p class="datetime">12 July 2018, 9:20 PM</p>
+        </div>
+
+        <div class="message outgoing">
+            <div class="message-box">
+                <div class="avatar">
+                    <img src="assets/placeholders/face.jpg">
+                </div>
+                <div class="talk-bubble">
+                    <div class="talktext">
+                        <p>And now using .round we can smooth the sides down. Also uses .btm-left to show a triangle at the bottom flush to the left.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="attachments"></div>
+            <p class="datetime">12 July 2018, 9:20 PM</p>
+        </div>
+
+    </div>
+
+</ion-content>
+<ion-footer>
+    <!-- <ion-item>
+        <ion-input placeholder="write a message"></ion-input>
+        <ion-icon name="ios-send" color="primary" item-right></ion-icon>
+    </ion-item> -->
+    <ion-item style="    overflow: inherit;contain: unset;">
+        <!-- <button ion-button clear icon-only (click)="toggled = !toggled" [(emojiPickerIf)]="toggled" [emojiPickerDirection]="'top'"
+        (emojiPickerSelect)="handleSelection($event)"> -->
+        <!-- </button> -->
+        
+        <ion-textarea placeholder="write a comment" [(ngModel)]="message" name="comment" id="comment" row="1" (ionChange)="changeCommentBox()"></ion-textarea>
+        <ion-icon name="md-happy"  color="primary" (click)="toggled = !toggled" [(emojiPickerIf)]="toggled" [emojiPickerDirection]="'top'"
+        (emojiPickerSelect)="handleSelection($event)" item-left></ion-icon>
+      <ion-icon name="ios-send" color="primary" item-right></ion-icon>
+    </ion-item>
+</ion-footer>

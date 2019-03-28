@@ -1,0 +1,29 @@
+page-order-detail {
+    .wrapper{
+        // height: 100%;
+        // display: flex;
+        // flex-direction: column;       
+        // align-items: center;
+    padding: 0px !important;
+        h1{
+          font-size: 2em;
+        }
+    
+        p{          
+          margin-top: 0;
+        }
+    
+      }
+
+      ion-avatar img, ion-thumbnail img {
+        width: 50px;
+        height: 50px;
+        margin: 0 auto;
+    }
+    
+    
+      .tick{
+        font-size: 10em;
+    
+      }
+}

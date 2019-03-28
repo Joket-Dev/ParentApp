@@ -1,0 +1,74 @@
+<ion-header class="nav-header" no-border>
+  <ion-navbar class="navbar" color="primary">
+    <ion-buttons left mode="md">
+      <button menuToggle ion-button icon-only start slot="start">
+        <img class="menu-icon" src="assets/icon/menu.png">
+      </button>
+    </ion-buttons>
+
+
+    <ion-title class="nav-title">Class Schedule</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="openNotificationsPage()">
+        <ion-icon name="ios-notifications-outline" color="white"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<!-- <ion-content>
+    <div class="extended-nav-color"></div>
+    <div class="wrapper">
+        <div class="date">
+            <button (click)="prevDate()" icon-only class="nav-arrow">
+                <ion-icon name="md-arrow-back"></ion-icon>
+            </button>
+
+            <h1 (swipe)="swipeEvent($event)">{{selectedDate | date:'mediumDate'}}</h1>
+
+            <button (click)="nextDate()" icon-only class="nav-arrow">
+                <ion-icon name="md-arrow-forward"></ion-icon>
+            </button>
+        </div>
+        <ion-list>
+            <ion-item class="class" *ngFor="let i of [0,1,2,3,5,6,7]">
+                <h2>English</h2>
+                <p class="time" item-right>9:30 - 10:15</p>
+            </ion-item>
+        </ion-list> -->
+
+<!--<section class="list">-->
+<!--<div class="item card-shadow" *ngFor="let i of [0,1,2,3,4,5,6]">-->
+<!--<p>English</p>-->
+<!--<span>9:30 - 10:15</span>-->
+<!--</div>-->
+<!--</section>-->
+<!-- </div>
+</ion-content> -->
+
+
+<ion-content class="bg-primary-gradient">
+  <div class="wrapper">
+    <div class="date">
+      <button (click)="prevDate()" icon-only class="nav-arrow">
+        <ion-icon name="ios-arrow-round-back"></ion-icon>
+      </button>
+
+      <h1 (swipe)="swipeEvent($event)">{{selectedDate | date:'mediumDate'}}</h1>
+
+      <button (click)="nextDate()" icon-only class="nav-arrow">
+        <ion-icon name="ios-arrow-round-forward"></ion-icon>
+      </button>
+    </div>
+  </div>
+  <section>
+    <ion-list no-lines class="schedule-list">
+      <ion-item class="class" *ngFor="let schedule of scheduleList">
+        <h2>{{schedule.subject}}</h2>
+        <p class="time" item-right>{{schedule.starttime}} - {{schedule.endtime}}</p>
+      </ion-item>
+    </ion-list>
+  </section>
+</ion-content>

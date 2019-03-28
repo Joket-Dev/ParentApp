@@ -1,0 +1,76 @@
+<ion-header class="nav-header" no-border>
+  <ion-navbar class="navbar" color="primary">
+    <ion-buttons left mode="md">
+      <button menuToggle ion-button icon-only>
+        <img class="menu-icon" src="assets/icon/menu.png">
+      </button>
+    </ion-buttons>
+    <ion-title class="nav-title">Shop</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="openOrdersPage()">
+        <ion-icon name="md-paper" color="white"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="openNotificationsPage()">
+        <ion-icon name="ios-notifications-outline" color="white"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <!-- <ion-toolbar color="primary" no-border class="scrollable-segments"> 
+     <ion-segment mode="md" color="light" [(ngModel)]="postType">
+      <ion-segment-button value="featured">
+        Uniform
+      </ion-segment-button>
+      <ion-segment-button value="recent">
+        Book
+      </ion-segment-button>
+    </ion-segment>
+    
+  </ion-toolbar> -->
+</ion-header>
+
+
+<ion-content>
+  <super-tabs [config]="{ sideMenu: 'left' }" indicatorColor="light" toolbarColor="light" toolbarBackground="primary">
+    <super-tab [root]="orderdetailPage" title="Uniform" [rootParams]="{ page: 'Uniform' }"></super-tab>
+    <super-tab [root]="ordersPage" title="Book" [rootParams]="{ page: 'Book' }"></super-tab>
+  </super-tabs>
+  <!-- <div class="extended-nav-color"></div> -->
+  <!-- <div class="overlay-box"> -->
+
+  <!-- <ion-item class="select-round">
+            <ion-select placeholder="Choose category">
+                <ion-option value="uniform">Uniform</ion-option>
+                <ion-option value="book">Book</ion-option>
+            </ion-select>
+        </ion-item> -->
+
+
+  <!-- 
+         -->
+  <!-- <div [ngSwitch]="postType" [tabsList]="categories" [(currentTab)]="postType" (tabChanged)="onTabChanged($event)" class="swipe-area">
+            <section class="product-list"  *ngSwitchCase="'featured'" >
+                <product *ngFor="let i of productList;" [data]="i" (valueChange)="cartChanged($event)"></product>
+            </section>
+        
+            <section class="product-list"  *ngSwitchCase="'recent'" >
+                <product *ngFor="let i of bookList;" [data]="i" (valueChange)="cartChanged($event)"></product>
+            </section>
+                  
+          </div> -->
+  <!-- </div> -->
+
+
+</ion-content>
+
+<ion-footer>
+  <div class="bottom-actions">
+    <button (click)="openShoppingCartPage()">
+      <ion-icon name="md-cart"></ion-icon>
+      Cart ({{cartCount}})
+    </button>
+    <button (click)="openDetailPage()">
+      <ion-icon name="md-cash"></ion-icon>
+      Checkout
+    </button>
+  </div>
+</ion-footer>

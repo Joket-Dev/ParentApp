@@ -1,0 +1,46 @@
+page-showcase-profile {
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .btn-simple {
+    background: rgb(254, 111, 61);
+    color: white;
+    padding: 1.5em 1.5em;
+  }
+
+  .profile-post{
+    min-height: 90px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .overlay-box {
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: 0px;
+    width: 100%;
+    background: transparent;
+    padding: 0px 1.3em;
+
+    .content {
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      padding: 1em 1.4em;
+      text-align: left;
+
+      span {
+        font-weight: bold;
+      }
+
+      .profile-pic {
+        width: 80px;
+        position: absolute;
+        top: 1em;
+        right: 2em;
+      }
+    }
+  }
+}

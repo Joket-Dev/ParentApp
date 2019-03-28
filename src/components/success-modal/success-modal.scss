@@ -1,0 +1,25 @@
+success-modal {
+  .wrapper{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1{
+      font-size: 4em;
+    }
+
+    p{
+      font-size: 1.5em;
+      margin-top: 0;
+    }
+
+  }
+
+
+  ion-icon{
+    font-size: 10em;
+
+  }
+}

@@ -1,0 +1,48 @@
+<section class="container">
+    <div class="progress-percentage-wrapper">
+        <div class="progress-percentage ng-cloak">{{70}}%</div>
+        <round-progress
+                [current]="70"
+                [max]="100"
+                [color]="progressConfig.color"
+                [background]="'#eaeaea'"
+                [radius]="40"
+                [stroke]="progressConfig.stroke"
+                [duration]="800"
+                [animation]="'easeInOutQuart'"
+                [animationDelay]="0">
+        </round-progress>
+        <p class="caption">Attendance</p>
+    </div>
+    <div class="progress-percentage-wrapper">
+        <div class="progress-percentage ng-cloak">{{60}}%</div>
+        <round-progress
+                [current]="60"
+                [max]="100"
+                [color]="progressConfig.color"
+                [background]="'#eaeaea'"
+                [radius]="40"
+                [stroke]="progressConfig.stroke"
+                [duration]="800"
+                [animation]="'easeInOutQuart'"
+                [animationDelay]="0">
+        </round-progress>
+        <p class="caption">Homework</p>
+    </div>
+    <div class="progress-percentage-wrapper">
+        <div class="progress-percentage ng-cloak">{{80}}%</div>
+        <round-progress
+                [current]="80"
+                [max]="100"
+                [color]="progressConfig.color"
+                [background]="'#eaeaea'"
+                [radius]="40"
+                [stroke]="progressConfig.stroke"
+                [duration]="800"
+                [animation]="'easeInOutQuart'"
+                [animationDelay]="0">
+        </round-progress>
+        <p class="caption">Assignments</p>
+    </div>
+</section>
+

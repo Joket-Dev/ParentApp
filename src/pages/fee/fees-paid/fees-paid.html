@@ -1,0 +1,61 @@
+<ion-header class="nav-header" no-border>
+  <ion-navbar class="navbar" color="primary">
+    <ion-buttons left mode="md">
+      <button menuToggle ion-button icon-only>
+        <img class="menu-icon" src="assets/icon/menu.png">
+      </button>
+    </ion-buttons>
+    <ion-title class="nav-title">Paid Fees</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="openNotificationsPage()">
+        <ion-icon name="ios-notifications-outline" color="white"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <!-- <ion-toolbar color="primary" no-border class="scrollable-segments">
+    <ion-segment mode="md" color="light" [(ngModel)]="feeType">
+      <ion-segment-button value="tution">
+        Tution Fee
+      </ion-segment-button>
+
+      <ion-segment-button value="bus">
+        Bus Fee
+      </ion-segment-button>
+
+      <ion-segment-button value="academic">
+        Academic
+      </ion-segment-button>
+
+      <ion-segment-button value="festival">
+        Festival Fee
+      </ion-segment-button>
+      <ion-segment-button value="other">
+        Other Fee
+      </ion-segment-button>
+
+    </ion-segment>
+  </ion-toolbar> -->
+
+</ion-header>
+
+<ion-content>
+  <super-tabs [config]="{ sideMenu: 'left' }" indicatorColor="light" toolbarColor="light" toolbarBackground="primary" scrollTabs="true">
+    <super-tab title="Tution Fee" [root]="feesTabPage" [rootParams]="{ page: 'tution' }"></super-tab>
+    <super-tab title="Bus Fee" [root]="feesTabPage" [rootParams]="{ page: 'bus' }"></super-tab>
+    <super-tab title="Academic" [root]="feesTabPage" [rootParams]="{ page: 'academic' }"></super-tab>
+    <super-tab title="Festival Fee" [root]="feesTabPage" [rootParams]="{ page: 'festival' }"></super-tab>
+    <super-tab title="Other Fee" [root]="feesTabPage" [rootParams]="{ page: 'other' }"></super-tab>
+  </super-tabs>
+  <!-- <div [ngSwitch]="feeType" [tabsList]="categories" [(currentTab)]="feeType" (tabChanged)="onTabChanged($event)"
+    class="swipe-area">
+    <ion-list>
+      <ion-item class="fee" *ngFor="let i of [0,1,2,3];" (click)="openInfo()">
+        <h2><span text-capitalize>{{feeType}}</span> fee</h2>
+        <p>Last date: <span>21 July 2018</span></p>
+        <button class="info-btn">info</button>
+        <p class="amount" item-right>255 Rs</p>
+      </ion-item>
+    </ion-list>
+  </div> -->
+
+</ion-content>

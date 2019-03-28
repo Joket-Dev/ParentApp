@@ -1,0 +1,154 @@
+page-issue-chat {
+  .issue-heading{
+    font-size: 0.7em;
+    margin: 0;
+  }
+
+  .messaging{
+    padding: 1em;
+  }
+
+  .message{
+    margin-bottom: 2em;
+  }
+
+  .message-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  // Avatar
+
+  .avatar{
+    min-width: 4em;
+    max-width: 4em;
+    border-radius: 4em;
+    overflow: hidden;
+  }
+
+  .incoming .avatar{
+    order: 1;
+  }
+
+  .outgoing .avatar{
+    order: 2;
+  }
+
+
+  // bubble
+
+  .talk-bubble {
+    margin: 1em;
+    padding: 0.6em 1em;
+    border-radius: 8px;
+    display: inline-block;
+    position: relative;
+    height: auto;
+    background-color: #03A9F4;
+    color: white;
+    text-align: left;
+  }
+
+
+  .incoming .talk-bubble:after{
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 0px;
+    right: auto;
+    top: auto;
+    bottom: -20px;
+    border: 22px solid;
+    border-color: transparent transparent transparent #03A9F4;
+  }
+
+
+  .incoming .talk-bubble{
+    order: 2;
+  }
+
+
+  .outgoing .talk-bubble:after{
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: auto;
+    right: 0px;
+    bottom: -18px;
+    border: 12px solid;
+    border-color: #fe6f3d #fe6f3d transparent transparent;
+  }
+
+
+  .outgoing .talk-bubble{
+    order: 1;
+    background-color: #fe6f3d;
+    color: white;
+  }
+
+
+
+
+  // attachments
+  .attachments{
+    display: flex;
+    margin: 0 1em;
+
+    .attachment{
+      max-width: 4em;
+      margin: 0.5em;
+    }
+  }
+
+  .incoming .attachments{
+    justify-content: flex-end;
+  }
+
+
+  .outgoing .attachments{
+    justify-content: flex-start;
+  }
+
+  // datetime
+
+  .datetime{
+    padding: 0 2em;
+    font-size: 0.8em;
+    margin: 0;
+    opacity: 0.6;
+  }
+
+
+  .incoming .datetime{
+    text-align: right;
+  }
+
+  .outgoing .datetime{
+    text-align: left;
+  }
+
+
+
+
+//  chat input
+  ion-item {
+    padding: 1em 1em !important;
+    margin-bottom: 0 !important;
+  }
+
+  .item-inner {
+    border: 1px solid #F6E6D7 !important;
+    padding: 0.1em 0.8em;
+    border-radius: 10px;
+    box-shadow: none !important;
+    max-height: 190px;
+    box-shadow: none !important;
+    margin-left: 0px !important; 
+    height: 60px;
+  }
+
+}

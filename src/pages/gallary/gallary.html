@@ -1,0 +1,21 @@
+<ion-header class="nav-header" no-border>
+  <ion-navbar class="navbar" color="primary">
+    <ion-title class="nav-title">
+      Gallary
+    </ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="openNotificationsPage()">
+        <ion-icon name="ios-notifications-outline" color="white"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-slides #slides class="slides">
+    <ion-slide class="slide" *ngFor="let i of [0, 1, 2, 3,4,5]; i as index">
+      <img [src]="imgSrc" />
+    </ion-slide>
+  </ion-slides>
+</ion-content>

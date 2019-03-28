@@ -1,0 +1,137 @@
+<ion-header class="nav-header" no-border>
+    <ion-navbar class="navbar" color="primary">
+        <ion-buttons left mode="md">
+            <button menuToggle ion-button icon-only start slot="start">
+                <img class="menu-icon" src="assets/icon/menu.png">
+            </button>
+        </ion-buttons>
+
+
+        <ion-title class="nav-title">Attendance</ion-title>
+        <ion-buttons right>
+            <button ion-button icon-only (click)="openNotificationsPage()">
+                <ion-icon name="ios-notifications-outline" color="white"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <div class="extended-nav-color"></div>
+
+    <div class="overlay-box">
+
+
+        <!--calendar-->
+        <div class="wrapper-vertically-limited">
+            <sc-month-calendar
+                    [(ngModel)]="selectedDate"
+                    [monthClass]="'custom-month'" [firstDayOfWeek]="1">
+
+                <!-- Month caption template -->
+                <ng-template scMonthCaptionTemplate
+                             let-date>
+                    <div class="month__caption">
+                        <ion-icon name="arrow-dropleft" (click)="prevMonth()"></ion-icon>
+                        <span>{{ date.toLocaleString('en-us', { month: 'long' })}}</span>
+                        <ion-icon name="arrow-dropright" (click)="nextMonth()"></ion-icon>
+                    </div>
+                </ng-template>
+
+                <!-- Day of week caption template -->
+                <ng-template scDayOfWeekCaptionTemplate
+                             let-dayOfWeek>
+                    <div [class.holidayCaption]="isHolidayCaption(dayOfWeek)"
+                         class="month__day-of-week-caption">{{ dayOfWeek }}
+                    </div>
+                </ng-template>
+
+                <!-- Day caption template -->
+                <ng-template scDayTemplate
+                             let-day>
+                    <div class="month__day"
+                         (click)="dayClicked(day.date)"
+                         [class.holiday]="isHoliday(day)"
+                         [class.absent-day]="isAbsentDay(day)"
+                         [class.leave-day]="isLeaveDay(day)"
+                         [class.month__day--selected]="day?.isSelected">
+                        {{ day?.day }}
+                    </div>
+                </ng-template>
+
+            </sc-month-calendar>
+        </div>
+
+        <!--Progress-->
+        <section *ngIf="showProgress">
+            <h2 class="progress-heading">Academic Year</h2>
+            <div class="progress-container">
+                <div class="progress-percentage-wrapper">
+                    <div class="progress-percentage ng-cloak">{{70}}%</div>
+                    <round-progress
+                            [current]="70"
+                            [max]="100"
+                            [color]="progressConfig.color"
+                            [background]="'#eaeaea'"
+                            [radius]="40"
+                            [stroke]="progressConfig.stroke"
+                            [duration]="800"
+                            [animation]="'easeInOutQuart'"
+                            [animationDelay]="0">
+                    </round-progress>
+                    <p class="caption">
+                        Present Days <br>
+                        178
+                    </p>
+                </div>
+                <div class="progress-percentage-wrapper">
+                    <div class="progress-percentage ng-cloak">{{60}}%</div>
+                    <round-progress
+                            [current]="60"
+                            [max]="100"
+                            [color]="progressConfig.color"
+                            [background]="'#eaeaea'"
+                            [radius]="40"
+                            [stroke]="progressConfig.stroke"
+                            [duration]="800"
+                            [animation]="'easeInOutQuart'"
+                            [animationDelay]="0">
+                    </round-progress>
+                    <p class="caption">
+                        Absent Days <br>
+                        178
+                    </p>
+                </div>
+                <div class="progress-percentage-wrapper">
+                    <div class="progress-percentage ng-cloak">{{80}}%</div>
+                    <round-progress
+                            [current]="80"
+                            [max]="100"
+                            [color]="progressConfig.color"
+                            [background]="'#eaeaea'"
+                            [radius]="40"
+                            [stroke]="progressConfig.stroke"
+                            [duration]="800"
+                            [animation]="'easeInOutQuart'"
+                            [animationDelay]="0">
+                    </round-progress>
+                    <p class="caption">
+                        Leave Days <br>
+                        178
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="actions" *ngIf="!showProgress">
+            <button (click)="openClassSchedulePage()">Class Schedule</button>
+            <button (click)="openTodoListPage()">TODO List</button>
+            <button (click)="openApplyForLeavePage()">Apply For Leave</button>
+        </section>
+
+    </div>
+
+</ion-content>

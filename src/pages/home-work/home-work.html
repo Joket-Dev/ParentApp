@@ -1,0 +1,69 @@
+<ion-header class="nav-header" no-border>
+  <ion-navbar class="navbar" color="primary">
+    <ion-buttons left mode="md">
+      <button menuToggle ion-button icon-only>
+        <img class="menu-icon" src="assets/icon/menu.png" />
+      </button>
+    </ion-buttons>
+    <ion-title class="nav-title">Home Work</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="openNotificationsPage()">
+        <ion-icon name="ios-notifications-outline" color="white"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="extended-nav-color"></div>
+
+  <section class="overlay-box">
+    <ion-slides #slides class="slides" (ionSlideDidChange)="slideChanged()">
+      <ion-slide class="slide" *ngFor="let i of [0, 1, 2, 3]; i as index">
+          <div class="head">
+              <button (click)="prevSlide()" icon-only class="nav-arrow">
+                <ion-icon name="md-arrow-back"></ion-icon>
+              </button>
+        
+              <div class="info">
+                <h1>
+                  {{ subjects[i] }}
+                </h1>
+              </div>
+        
+              <button (click)="nextSlide()" icon-only class="nav-arrow">
+                <ion-icon name="md-arrow-forward"></ion-icon>
+              </button>
+            </div>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries,
+        </p>
+
+        <div>
+          <ion-row class="gallary">
+            <ion-col col-6 *ngFor="let i of [0, 1, 2, 3, 4, 5]; i as index" (click)="openGallary()">
+              <div class="image-grid">
+                <ion-card style="height: 100%;margin: 0px 8px 8px 8px !important;">
+                  <img style="margin:0 auto;" src="assets/placeholders/question-paper.png" />
+                </ion-card>
+                </div>
+            </ion-col>
+          </ion-row>
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </section>
+</ion-content>
+
+<ion-footer>
+  <ion-item>
+    <ion-label>
+      STATUS
+    </ion-label>
+    <ion-checkbox checked item-right color="primary"></ion-checkbox>
+  </ion-item>
+</ion-footer>

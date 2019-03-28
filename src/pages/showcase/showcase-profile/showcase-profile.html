@@ -1,0 +1,39 @@
+<ion-header class="nav-header" no-border>
+  <ion-navbar class="navbar" color="primary">
+    <ion-buttons left mode="md">
+      <button menuToggle ion-button icon-only>
+        <img class="menu-icon" src="assets/icon/menu.png">
+      </button>
+    </ion-buttons>
+    <ion-title class="nav-title">Profile</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="openNotificationsPage()">
+        <ion-icon name="ios-notifications-outline" color="white"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="profile">
+  <div class="overlay-box">
+    <div class="content">
+      <p no-margin><span class="primary">John Doe</span></p>
+      <p no-margin><span>Class: </span> 3rd</p>
+      <p no-margin margin-bottom><span class="primary">student@ferndle.co.in</span><br></p>
+      <ion-slides slidesPerView="3" spaceBetween="10">
+        <ion-slide *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]">
+          <img src="assets/imgs/placeholder-img-kid.jpg" class="profile-post">
+        </ion-slide>
+      </ion-slides>
+      <button margin-top class="btn-simple" (click)="openConfirmationBox()">Follow</button>
+
+    </div>
+  </div>
+
+  <!-- <div class="overlay-box">
+        <section class="gallery">
+            <showcase-item  *ngFor="let i of [1,2,3,4,5,6,7,8]"></showcase-item>
+        </section>
+    </div> -->
+
+</ion-content>

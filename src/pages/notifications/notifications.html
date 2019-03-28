@@ -1,0 +1,61 @@
+<ion-header class="nav-header" no-border>
+  <ion-navbar class="navbar" color="primary">
+    <ion-buttons left mode="md">
+      <button menuToggle ion-button icon-only>
+        <img class="menu-icon" src="assets/icon/menu.png">
+      </button>
+    </ion-buttons>
+    <ion-title class="nav-title">Notifications</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only *ngIf="texts.length > 0" (click)="openConfirmationBox($event,'Are you want to remove all');">
+        <ion-icon name="md-checkbox-outline" color="white"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <section class="list" *ngIf="texts.length > 0">
+    <ion-list no-margin>
+      <ion-item *ngFor="let text of texts;let i=index" (click)="openInfo($event)">
+        <ion-avatar item-start>
+          <img src="assets/imgs/face-placeholder.png">
+        </ion-avatar>
+        <h2><span class="primary" style="font-weight: 600;">{{user[i]}} </span>{{text}}</h2>
+        <p no-padding>{{times[i]}} ago</p>
+        <ion-icon ios="ios-close-circle" md="md-close-circle" color="primary" item-end
+        (click)="openConfirmationBox($event,'Are you want to remove it',i)"></ion-icon>
+      </ion-item>
+    </ion-list>
+  </section>
+  <section class="wrapper" style="margin-top:30vh" *ngIf="texts.length < 1">
+    <ion-avatar item-start>
+      <img src="assets/imgs/notification.png" style="border-radius: 0px;">
+    </ion-avatar>
+    <p text-bold>Nothing here!</p>
+    <p></p>
+  </section>
+  <!-- <ion-row *ngFor="let event of eventList;" class="custom-list list-border" (click)="openEventDetails()" style="padding: 8px 0px;" >
+      <ion-col col-2>
+        <ion-avatar item-start class="school-avatar">
+          <img src="https://ionicframework.com/dist/preview-app/www/assets/img/avatar-ts-woody.png">
+        </ion-avatar>
+      </ion-col>
+      <ion-col col-7 text-left>
+        <h6 no-margin text-bold>{{event.title}}</h6>
+        <p no-margin class="detail">{{event.author}}&nbsp;&#9679; {{event.replies}} replies</p>
+      </ion-col>
+      <ion-col col-3>
+          <p no-margin class="creater">{{event.created_by}}</p>
+          <p no-margin>{{event.time}}</p>
+      </ion-col>
+    </ion-row> -->
+</ion-content>
+<ion-footer *ngIf="texts.length < 1">
+  <div text-center padding>
+    <label class="switch"><input type="checkbox" id="togBtn">
+      <div class="slider round"></div>
+    </label>
+  </div>
+</ion-footer>

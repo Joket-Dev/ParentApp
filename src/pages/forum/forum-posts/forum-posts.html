@@ -1,0 +1,62 @@
+<ion-header class="nav-header" no-border>
+  <ion-navbar class="navbar" color="primary">
+    <ion-buttons left mode="md">
+      <button menuToggle ion-button icon-only>
+        <img class="menu-icon" src="assets/icon/menu.png">
+      </button>
+    </ion-buttons>
+    <ion-title class="nav-title">Forum</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="openNotificationsPage()">
+        <ion-icon name="ios-notifications-outline" color="white"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <!-- <ion-toolbar color="primary" no-border class="scrollable-segments"> -->
+  <!-- <ion-segment mode="md" color="light" [(ngModel)]="postType">
+      <ion-segment-button value="featured">
+        Featured
+      </ion-segment-button>
+
+      <ion-segment-button value="recent">
+        Most Recent
+      </ion-segment-button>
+
+      <ion-segment-button value="educational">
+        Educational
+      </ion-segment-button>
+
+      <ion-segment-button value="festival">
+        Recreational
+      </ion-segment-button>
+
+      <ion-segment-button value="other">
+        Beautiful
+      </ion-segment-button>
+
+    </ion-segment> -->
+  <!-- </ion-toolbar> -->
+
+</ion-header>
+
+<ion-content>
+  <super-tabs [config]="{ sideMenu: 'left' }" indicatorColor="light" toolbarColor="light" toolbarBackground="primary"
+    scrollTabs="true">
+    <super-tab title="Featured" [root]="forumsTabPage" [rootParams]="{ page: 'featured' }"></super-tab>
+    <super-tab title="Most Recent" [root]="forumsTabPage" [rootParams]="{ page: 'recent' }"></super-tab>
+    <super-tab title="Educational" [root]="forumsTabPage" [rootParams]="{ page: 'educational' }"></super-tab>
+    <super-tab title="Recreational" [root]="forumsTabPage" [rootParams]="{ page: 'festival' }"></super-tab>
+    <super-tab title="Beautiful" [root]="forumsTabPage" [rootParams]="{ page: 'other' }"></super-tab>
+  </super-tabs>
+  <!-- <div [ngSwitch]="postType" [tabsList]="categories" [(currentTab)]="postType" (tabChanged)="onTabChanged($event)"
+    class="swipe-area">
+    <ion-list class="post-list">
+      <forum-post-item *ngFor="let i of [1,2,3,4,5,6,7,8]" [FormType]="postType"></forum-post-item>
+    </ion-list>
+  </div> -->
+  <ion-fab bottom right>
+    <button ion-fab (click)="openForumPostCreatePage()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

@@ -1,0 +1,82 @@
+<ion-header class="nav-header" no-border>
+  <ion-navbar class="navbar" color="primary">
+    <ion-buttons left mode="md">
+      <button menuToggle ion-button icon-only>
+        <img class="menu-icon" src="assets/icon/menu.png">
+      </button>
+    </ion-buttons>
+    <ion-title class="nav-title">
+      John
+      <p (click)="openShowcaseProfilePage()">View Profile</p>
+    </ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="openNotificationsPage()">
+        <ion-icon name="ios-notifications-outline" color="white"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="extended-nav-color"></div>
+  <div class="overlay-box">
+    <section class="resource">
+      <h4 text-left no-margin style="padding-top:8px;">Albert Einstein</h4>
+      <img src="assets/imgs/placeholder-img-kid.jpg">
+    </section>
+    <p style="    text-align: justify;
+    margin: 0px 16px 16px 16px;">
+      Einstein always appeared to have a clear view of the problems of physics and the determination to solve them. He
+      had a strategy of his own and was able to visualize the main stages on the way to his goal. He regarded his major
+      achievements as mere stepping-stones for the next advance.
+    </p>
+    <section class="comments">
+      <h1 class="sub-header">
+        <span>Comments</span>
+        <div class="actions">
+          <span class="action">
+            <ion-icon name="{{isLoved? 'md-heart' : 'md-heart-outline'}}" color="{{isLoved? 'danger' : 'green'}}"
+              (click)="toggleLoved()"></ion-icon>
+            1
+          </span>
+          <ion-icon class="action" name="md-share-alt"></ion-icon>
+        </div>
+      </h1>
+      <div class="comment" *ngFor="let i of [1,2]">
+        <div class="avatar">
+          <img src="https://d3iw72m71ie81c.cloudfront.net/female-94.jpg">
+        </div>
+        <div class="details">
+          <h2>John Doe</h2>
+          <p>Contrary to popular belief, Lorem Ipsum is not simply random text.
+            It has roots in a piece of classical Latin literature from 45 BC,
+          </p>
+          <div class="actions" text-right>
+            <span class="action">
+              <ion-icon name="{{isLoved? 'md-heart' : 'md-heart-outline'}}" color="{{isLoved? 'danger' : 'green'}}"
+                (click)="toggleLoved()"></ion-icon>
+              1
+            </span>
+            <ion-icon class="action" name="md-share-alt"></ion-icon>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- <ion-item>
+            <ion-input placeholder="write a comment"></ion-input>
+            <ion-icon name="ios-send" color="primary" item-right></ion-icon>
+        </ion-item> -->
+  </div>
+
+</ion-content>
+<ion-footer>
+  <ion-item style="    overflow: inherit;contain: unset;">
+    <ion-textarea placeholder="write a comment" [(ngModel)]="message" name="comment" id="comment" row="1" (ionChange)="changeCommentBox()"></ion-textarea>
+      <ion-icon name="md-happy"  color="primary" (click)="toggled = !toggled" [(emojiPickerIf)]="toggled" [emojiPickerDirection]="'top'"
+      (emojiPickerSelect)="handleSelection($event)" item-left></ion-icon>
+    <ion-icon name="ios-send" color="primary" item-right></ion-icon>
+  </ion-item>
+</ion-footer>

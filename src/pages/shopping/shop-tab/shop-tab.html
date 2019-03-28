@@ -1,0 +1,11 @@
+<ion-content no-padding>
+  <div class="extended-nav-color"></div>
+  <div class="overlay-box">
+    <section class="product-list" *ngIf="postType == 'Uniform'">
+      <product *ngFor="let i of productList;" [data]="i" (valueChange)="cartChanged($event)"></product>
+    </section>
+    <section class="product-list" *ngIf="postType == 'Book'">
+      <product *ngFor="let i of bookList;" [data]="i" (valueChange)="cartChanged($event)"></product>
+    </section>
+  </div>
+</ion-content>

@@ -1,0 +1,105 @@
+<ion-header class="nav-header" no-border>
+  <ion-navbar class="navbar" color="primary">
+    <ion-buttons left mode="md">
+      <button menuToggle ion-button icon-only>
+        <img class="menu-icon" src="assets/icon/menu.png">
+      </button>
+    </ion-buttons>
+    <ion-title class="nav-title">Borrowed Books</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="openNotificationsPage()">
+        <ion-icon name="ios-notifications-outline" color="white"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="extended-nav-color"></div>
+  <div class="overlay-box">
+    <ion-row *ngFor="let event of bookList;" class="custom-list list-border" style="padding: 8px 0px;">
+      <ion-col col-2>
+        <ion-avatar item-start class="school-avatar">
+          <img src="assets/placeholders/book-cover.jpg">
+        </ion-avatar>
+      </ion-col>
+      <ion-col col-7 text-left>
+        <h6 no-margin text-bold>{{event.title}}</h6>
+        <p no-margin class="detail">{{event.author}}</p>
+        <p no-margin class="detail" text-uppercase>{{event.replies}}</p>
+      </ion-col>
+      <ion-col col-3>
+        <p no-margin class="creater">{{event.created_by}}</p>
+        <p no-margin>{{event.time}}</p>
+      </ion-col>
+    </ion-row>
+    <!-- <section class="book-list">
+      <div class="book">
+        <div class="row">
+          <div class="book-cover">
+            <img src="assets/placeholders/book-cover.jpg" alt="">
+
+          </div>
+          <div class="dates">
+            <p>
+              <ion-icon name="arrow-round-up"></ion-icon>
+              12 june 2016 - 10:30 PM
+            </p>
+            <p>
+              <ion-icon name="arrow-round-down"></ion-icon>
+              12 june 2016 - 10:30 PM
+            </p>
+          </div>
+        </div>
+        <div class="row book-footer">
+          <p>Returned</p>
+        </div>
+      </div>
+
+      <div class="book">
+        <div class="row">
+          <div class="book-cover">
+            <img src="assets/placeholders/book-cover.jpg" alt="">
+
+          </div>
+          <div class="dates">
+            <p>
+              <ion-icon name="arrow-round-up"></ion-icon>
+              12 june 2016 - 10:30 PM
+            </p>
+            <p>
+              <ion-icon name="arrow-round-down"></ion-icon>
+              12 june 2016 - 10:30 PM
+            </p>
+          </div>
+        </div>
+        <div class="row book-footer">
+          <p>Returned - Damaged</p>
+        </div>
+      </div>
+
+      <div class="book">
+        <div class="row">
+          <div class="book-cover">
+            <img src="assets/placeholders/book-cover.jpg" alt="">
+
+          </div>
+          <div class="dates">
+            <p>
+              <ion-icon name="arrow-round-up"></ion-icon>
+              12 june 2016 - 10:30 PM
+            </p>
+            <p>
+              <ion-icon name="pause"></ion-icon>
+              12 june 2016 - 10:30 PM
+            </p>
+          </div>
+        </div>
+        <div class="row book-footer">
+          <p>Not Returned - Beyond Due date</p>
+        </div>
+      </div>
+    </section> -->
+  </div>
+</ion-content>

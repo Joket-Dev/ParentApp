@@ -1,0 +1,14 @@
+<ion-content>
+  <div>
+    <ion-list>
+      <ion-item class="fee" *ngFor="let product of productList;" (click)="openInfo()">
+        <ion-avatar item-start>
+          <img [src]="product.image" style="border-radius: 0px;">
+        </ion-avatar>
+        <h2 class="primary">Prodcut name: {{product.name}}</h2>
+        <p>Order date: {{product.o_date}}</p>
+        <p>Delivery date: {{product.d_date}}</p>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

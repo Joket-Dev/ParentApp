@@ -1,0 +1,30 @@
+page-showcase-list {
+  .overlay-box{
+    padding-bottom: 1.5em;
+    padding-top: 1em;
+  }
+
+  .gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+
+
+  .stick-at-bottom{
+    background: white;
+    width: 100%;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    button{
+      font-size: 0.7em;
+    }
+
+  }
+
+}

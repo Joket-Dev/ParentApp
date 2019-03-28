@@ -1,0 +1,31 @@
+<ion-header class="nav-header" no-border>
+  <ion-navbar class="navbar" color="primary">
+    <ion-buttons left mode="md">
+      <button menuToggle ion-button icon-only>
+        <img class="menu-icon" src="assets/icon/menu.png">
+      </button>
+    </ion-buttons>
+    <ion-title class="nav-title">Track</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="  openNotificationPage()">
+        <ion-icon name="ios-notifications-outline" color="white"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <div #mapCanvas class="map-canvas"></div>
+  <ion-slides class="map-slider" slidesPerView="3" spaceBetween="10">
+    <ion-slide *ngFor="let data of mapData;let i=index;" (click)="moveMap(data)">
+      <div class="info-parent">
+        <div class="info">
+          <h5 text-center>{{data.time}}</h5>
+          <hr>
+          <h5 text-center class="loc">{{data.name}}</h5>
+        </div>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

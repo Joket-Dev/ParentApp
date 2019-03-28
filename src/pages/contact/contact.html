@@ -1,0 +1,63 @@
+<ion-header class="nav-header" no-border>
+    <ion-navbar class="navbar" color="primary">
+        <ion-buttons left mode="md">
+            <button menuToggle ion-button icon-only>
+                <img class="menu-icon" src="assets/icon/menu.png">
+            </button>
+        </ion-buttons>
+        <ion-title class="nav-title">Contact</ion-title>
+        <ion-buttons right>
+            <button ion-button icon-only (click)="openNotificationsPage()">
+                <ion-icon name="ios-notifications-outline" color="white"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div class="extended-nav-color"></div>
+    <div class="overlay-box">
+        <form #contactForm (ngSubmit)="submitContactDetail(contactForm)">
+            <ion-item class="select-round">
+                <ion-select placeholder="Select department" interface="action-sheet">
+                    <ion-option value="science" >Science</ion-option>
+                    <ion-option value="arts">Arts</ion-option>
+                </ion-select>
+            </ion-item>
+
+            <ion-item class="select-round">
+                <ion-select placeholder="Select Person" interface="action-sheet">
+                    <ion-option value="John">John Doe</ion-option>
+                    <ion-option value="bus">Bus fee</ion-option>
+                </ion-select>
+            </ion-item>
+
+            <ion-item class="flex-column select-round">
+                <!-- <ion-label>TITLE</ion-label> -->
+                <ion-select>
+                    <ion-option selected>Wrong amount deducted</ion-option>
+                    <ion-option>Black Olives</ion-option>
+                    <ion-option>Extra Cheese</ion-option>
+                    <ion-option>Mushrooms</ion-option>
+                    <ion-option>Pepperoni</ion-option>
+                    <ion-option>Sausage</ion-option>
+                </ion-select>
+            </ion-item>
+
+            <ion-item class="flex-column">
+                <!-- <ion-label>DESCRIPTION</ion-label> -->
+                <ion-textarea placeholder="Enter a description" rows="7"></ion-textarea>
+            </ion-item>
+
+            <p class="attachment">
+                <span (click)="openFileInput()" padding-left padding-right>
+                    Attachment
+                    <ion-icon name="md-attach"></ion-icon>
+                    <input type="file" [hidden]="true" id="contact_files" name="contact_files" capture="camera" (change)="fileSelected($event)"/>
+                </span>
+            </p>
+
+            <button class="button">SUBMIT</button>
+        </form>
+    </div>
+</ion-content>

@@ -1,0 +1,75 @@
+<ion-header class="nav-header" no-border>
+  <ion-navbar class="navbar" color="primary">
+    <ion-buttons left mode="md">
+      <button menuToggle ion-button icon-only>
+        <img class="menu-icon" src="assets/icon/menu.png">
+      </button>
+    </ion-buttons>
+    <ion-title class="nav-title">
+      <span>
+        <ion-icon name="ios-cart-outline"></ion-icon>
+      </span>
+      <p (click)="openShowcaseProfilePage()" class="title-text">Summary</p>
+    </ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="openNotificationsPage()">
+        <ion-icon name="ios-notifications-outline" color="white"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of cartList; let i=index;" class="cart-item">
+      <span class="primary">{{item.name}}</span>
+      <p item-end>${{item.price}}</p>
+    </ion-item>
+    <ion-item class="cart-item status">
+      <p text-right>Total</p>
+      <h6 item-end class="primary">$184.00</h6>
+    </ion-item>
+    <ion-item class="cart-item" margin-top>
+      <ion-input type="text" value="" placeholder="Coupon Code" ion-start margin-right class="coupon-input"></ion-input>
+      <button ion-button color="primary" item-end class="apply-btn">&nbsp;Apply&nbsp;</button>
+      <p item-end class="coupon-text">$20</p>
+    </ion-item>
+    <ion-item class="cart-item" margin-top>
+      <ion-row>
+        <ion-col col-6 no-padding>
+          <button ion-button block text-capitalize class="radio-btn" [ngClass]="{'non-selected-btn': isSchool}" tappable (tap)="isSchool=!isSchool">
+            Delivery in School
+          </button>
+        </ion-col>
+        <ion-col col-6 no-padding>
+          <button ion-button block text-capitalize class="radio-btn" [ngClass]="{'non-selected-btn': !isSchool}" tappable (tap)="isSchool=!isSchool">
+            Delivery to Home
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item class="cart-item">
+      <ion-row>
+        <ion-col col-6 no-padding>
+          <button ion-button block text-capitalize class="radio-btn" [ngClass]="{'non-selected-btn': isPaytm}" tappable (tap)="isPaytm=!isPaytm">
+            Paytm
+          </button>
+        </ion-col>
+        <ion-col col-6 no-padding>
+          <button ion-button block text-capitalize class="radio-btn" [ngClass]="{'non-selected-btn': !isPaytm}" tappable (tap)="isPaytm=!isPaytm">
+            CCAvenue
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <div>
+    <button ion-button style="border:none;padding: 25px;" block (click)="pay()" color="primary">
+      Pay $164
+    </button>
+  </div>
+</ion-footer>

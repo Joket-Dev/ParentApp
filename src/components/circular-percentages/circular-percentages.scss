@@ -1,0 +1,37 @@
+circular-percentages {
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    animation: scaleup 0.4s ease-in-out;
+  }
+
+  @keyframes scaleup {
+    0% {
+      transform: scale(0);
+      -webkit-transform: scale(0);
+    }
+    100% {
+      transform: scale(1.0);
+      -webkit-transform: scale(1.0);
+    }
+  }
+
+  .progress-percentage-wrapper {
+    position: relative;
+    margin: 1em;
+  }
+  .progress-percentage {
+    position: absolute;
+    color: #fe6f3d;
+    width: 100%;
+    font-weight: bolder;
+    text-align: center !important;
+    top: calc(50% - 1.4em);
+    transform: translate(0, -50%);
+  }
+
+  .caption{
+    font-size: 0.8em;
+  }
+}

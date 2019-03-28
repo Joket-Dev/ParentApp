@@ -1,0 +1,32 @@
+<ion-header no-border>
+  <ion-navbar color="primary" class="navbar">
+    <ion-buttons left>
+      <button menuToggle ion-button icon-only>
+        <img class="menu-icon" src="assets/icon/menu.png">
+      </button>
+    </ion-buttons>
+
+    <ion-title class="nav-title">Practice Tests</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only>
+        <ion-icon name="ios-notifications-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content bg-primary-gradient">
+  <div class="wrapper ">
+
+    <h1>Select The Subject</h1>
+
+    <section class="subjects">
+      <button class="subject" (click)="openQuestionsPage()">English</button>
+      <button class="subject">Tamil</button>
+      <button class="subject">Maths</button>
+      <button class="subject">Science</button>
+      <button class="subject">Geography</button>
+    </section>
+  </div>
+
+</ion-content>

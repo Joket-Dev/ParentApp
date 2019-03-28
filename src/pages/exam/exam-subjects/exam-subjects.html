@@ -1,0 +1,65 @@
+<ion-header class="nav-header" no-border>
+  <ion-navbar class="navbar" color="primary">
+    <ion-buttons left mode="md">
+      <button menuToggle ion-button icon-only>
+        <img class="menu-icon" src="assets/icon/menu.png">
+      </button>
+    </ion-buttons>
+    <ion-title class="nav-title">Exam Results</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="openNotificationsPage()">
+        <ion-icon name="ios-notifications-outline" color="white"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="content bg-primary-gradient">
+  <div class="wrapper ">
+
+    <!-- <h1>Select The Subject</h1> -->
+    <!-- <hr> -->
+
+    <section class="subjects">
+        <section class="subjects">
+            <button class="subject" *ngFor="let subject of subjects;let i = index;" (click)="openDetail()">{{subject}}</button>
+          </section>
+    </section>
+  </div>
+
+</ion-content>
+<!-- <ion-header class="nav-header" no-border>
+  <ion-navbar class="navbar" color="primary">
+    <ion-buttons left mode="md">
+      <button menuToggle ion-button icon-only>
+        <img class="menu-icon" src="assets/icon/menu.png">
+      </button>
+    </ion-buttons>
+    <ion-title class="nav-title">Exam Results</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only>
+        <ion-icon name="ios-notifications-outline" color="white"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+  <div class="hero-box">
+    <ion-select>
+      <ion-option selected>Mid term</ion-option>
+      <ion-option>Final</ion-option>
+    </ion-select>
+  </div>
+
+
+  <div class="card-list">
+    <div class="item card-shadow" (click)="openExamResultPage()" *ngFor="let i of [1,2,3,4,5,6,7,8]">
+      <h1>English</h1>
+    </div>
+  </div>
+
+</ion-content> -->

@@ -1,0 +1,40 @@
+page-todo-list{
+
+  .wrapper{
+    margin-top: 6em;
+  }
+
+}
+.nav-bg{
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.item{
+  background: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1em 2em;
+  font-size: 1.2em;
+  border-radius: 5px;
+  margin-bottom: 2em;
+}
+
+.item .checkbox{
+  align-self: center;
+}
+
+.checkbox-icon{
+  height: 24px !important;
+  width: 24px !important;
+  background-color: rgb(254,111,61) !important;
+  border-style: none !important;
+}
+
+.checkbox-checked .checkbox-inner{
+  left: 10px !important;
+  top: 6px !important;
+
+}

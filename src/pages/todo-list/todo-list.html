@@ -1,0 +1,30 @@
+<ion-header class="nav-header" mode="md" no-border>
+    <ion-navbar class="navbar"  mode="md"   transparent>
+        <ion-buttons left mode="md">
+            <button menuToggle ion-button icon-only start slot="start">
+                <img class="menu-icon" src="assets/icon/menu-red.png">
+            </button>
+        </ion-buttons>
+
+
+        <ion-title class="nav-title">Todo List</ion-title>
+        <ion-buttons right>
+            <button ion-button icon-only (click)="openNotificationsPage()">
+                <ion-icon name="ios-notifications-outline" color="primary"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+    <img class="nav-bg" src="assets/imgs/nav-bg.svg">
+
+</ion-header>
+
+<ion-content class="content bg-primary-gradient">
+    <div class="wrapper">
+        <section class="list">
+            <div class="item card-shadow" *ngFor="let i of [0,1,2,3]">
+                <p>English Home Work</p>
+                <ion-checkbox mode="md" class="checkbox" checked></ion-checkbox>
+            </div>
+        </section>
+    </div>
+</ion-content>

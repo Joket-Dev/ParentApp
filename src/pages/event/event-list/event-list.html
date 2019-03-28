@@ -1,0 +1,60 @@
+<ion-header class="nav-header" no-border>
+  <ion-navbar class="navbar" color="primary">
+    <ion-buttons left mode="md">
+      <button menuToggle ion-button icon-only>
+        <img class="menu-icon" src="assets/icon/menu.png">
+      </button>
+    </ion-buttons>
+    <ion-title class="nav-title">Events</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="openNotificationsPage()">
+        <ion-icon name="ios-notifications-outline" color="white"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <super-tabs [config]="{ sideMenu: 'left' }" indicatorColor="light" toolbarColor="light" toolbarBackground="primary">
+        <super-tab [root]="eventUpcomingPage" title="Upcoming" [rootParams]="{ page: 'Upcoming' }"></super-tab>
+        <super-tab [root]="eventPastPage" title="Past" [rootParams]="{ page: 'Past' }"></super-tab>
+      </super-tabs>
+  <!-- <div class="extended-nav-color"></div> -->
+  <!-- <div class="overlay-box"> -->
+    <!-- <section class="type" [(ngModel)]="type">
+      <ion-segment mode="ios" value="upcoming"  (ionChange)="segmentChanged($event)">
+        <ion-segment-button value="upcoming">
+          Upcoming
+        </ion-segment-button>
+        <ion-segment-button value="Past">
+          Past
+        </ion-segment-button>
+      </ion-segment>
+    </section> -->
+
+    <!-- <section class="list">
+            <div class="item" (click)="openEventDetails()" *ngFor="let i of [0,1,2,3,4,5,6,7,8]">
+                <h1>This is an event title</h1>
+                <p>9:30 AM, 23 Jan 2019</p>
+            </div>
+        </section> -->
+        <!-- <div [ngSwitch]="type" [tabsList]="categories" [(currentTab)]="type" (tabChanged)="onTabChanged($event)" class="swipe-area">
+          <ion-row *ngFor="let event of eventList;" class="custom-list list-border" (click)="openEventDetails()" style="padding: 8px 0px;" >
+            <ion-col col-2>
+              <ion-avatar item-start class="school-avatar">
+                <img src="https://ionicframework.com/dist/preview-app/www/assets/img/avatar-ts-woody.png">
+              </ion-avatar>
+            </ion-col>
+            <ion-col col-7 text-left>
+              <h6 no-margin text-bold>{{event.title}}</h6>
+              <p no-margin class="detail">{{event.author}}&nbsp;&#9679; {{event.replies}} replies</p>
+            </ion-col>
+            <ion-col col-3>
+                <p no-margin class="creater">{{event.created_by}}</p>
+                <p no-margin>{{event.time}}</p>
+            </ion-col>
+          </ion-row>
+        </div> -->
+    
+  <!-- </div> -->
+</ion-content>

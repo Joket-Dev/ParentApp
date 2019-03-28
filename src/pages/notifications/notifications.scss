@@ -1,0 +1,124 @@
+page-notifications {
+  .type {
+    padding: 2em 1em;
+  }
+
+  .list {
+    padding-bottom: 2em;
+    padding-top: 0em;
+  }
+
+  .item {
+    align-items: center;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    border-bottom: none !important;
+    padding: 0px 0px 0em 16px !important;
+    margin: 0px !important;
+
+    h1,
+    p {
+      margin: 0;
+      line-height: 1;
+    }
+
+    h1 {
+      font-size: 13px;
+    }
+
+    h2{
+      white-space: normal;
+      font-size: 1.4rem !important;
+      line-height: 1;
+    }
+
+    p {
+      font-size: 0.8em;
+      padding-left: 1em;
+    }
+   
+    .item-inner {
+      padding: 0em 0.2em !important;
+    }
+
+  }
+
+  ion-avatar img,
+  ion-thumbnail img {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto;
+  }
+
+
+  .tick {
+    font-size: 10em;
+
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 90px;
+    height: 34px;
+  }
+  
+  .switch input {display:none;}
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #9e9e9e;
+    -webkit-transition: .4s;
+    transition: .4s;
+     border-radius: 34px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: #fe6b50;;
+  }
+   
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(55px);
+  }
+  
+  /*------ ADDED CSS ---------*/
+  .slider:after
+  {
+   content:'OFF';
+   color: white;
+   display: block;
+   position: absolute;
+   transform: translate(-50%,-50%);
+   top: 50%;
+   left: 50%;
+   font-size: 10px;
+   font-family: Verdana, sans-serif;
+  }
+  
+  input:checked + .slider:after
+  {  
+    content:'ON';
+  }
+  
+  /*--------- END --------*/
+}

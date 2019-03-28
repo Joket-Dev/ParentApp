@@ -1,0 +1,147 @@
+page-progress-report {
+  .row {
+    justify-content: center;
+    margin: 2em 0;
+  }
+
+  .scrollable-segments {
+    padding: 0px 1em !important;
+  }
+
+  .status {
+    margin: 0;
+    font-size: 0.7em !important;
+  }
+
+  ion-select {
+    min-width: 30% !important;
+    border: 2px solid #F6E6D7 !important;
+    border-radius: 0px !important;
+    background: white;
+    color: #fe6f3d;
+    margin-right: 1em;
+  }
+
+  .select-text {
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .select-icon {
+    margin-right: 10px !important;
+  }
+
+  .select-icon-inner {
+    color: #fe6f3d !important;
+  }
+
+  .item-cover {
+    height: auto;
+  }
+
+  // circular progress
+
+  .progress-percentage-wrapper {
+    position: relative;
+    margin: 1em;
+  }
+
+  .progress-percentage {
+    position: absolute;
+    color: #fe6f3d;
+    width: 100%;
+    font-weight: bolder;
+    text-align: center !important;
+    top: calc(50%);
+    transform: translate(0, -50%);
+  }
+
+  .caption {
+    font-size: 0.8em;
+  }
+
+  //subject segment
+
+  .scrollable-segments {
+    padding: 1em;
+
+    ion-segment {
+      display: block;
+      overflow-x: scroll;
+      white-space: nowrap;
+
+      ion-segment-button.segment-button {
+        display: inline-block;
+        width: auto;
+        border-bottom-width: 0px !important;
+
+        &.segment-activated {
+          border-bottom-width: 2px !important;
+        }
+      }
+    }
+
+    .segment-button {
+      // border-bottom-style: none !important;
+      color: #2d2d2d !important;
+      font-size: 0.8em !important;
+      font-weight: bold !important;
+    }
+
+    .segment-activated {
+      color: rgb(254, 111, 61) !important;
+    }
+  }
+
+
+  // reports
+
+  .reports {
+    margin-bottom: 2em;
+
+    th {
+      color: #fe6b50;
+    }
+  }
+
+  table {
+    width: 100%;
+
+    td {
+      width: 30%;
+    }
+
+    ion-icon {
+      margin-left: 0.5em;
+    }
+
+    .notes {}
+  }
+
+  td {
+    padding: 0.4em;
+  }
+
+  td.notetext {
+    padding: 0px !important;
+    background: rgb(254, 111, 61);
+    color: #fff;
+  }
+
+
+  .btn-simple {
+    background: rgb(254, 111, 61);
+    color: white;
+    &.theme-back{
+      background: white;
+      color:  rgb(254, 111, 61);
+      border: 1px solid rgb(254, 111, 61);;
+    }
+  }
+
+  canvas {
+    display: block;
+    border: 1px solid rgb(187, 178, 178);
+  }
+
+}

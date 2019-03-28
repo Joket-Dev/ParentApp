@@ -1,0 +1,16 @@
+<div class="pos-rel img-box">
+  <img (click)="openShowcaseDetailsPage()" src="assets/imgs/placeholder-img-kid.jpg">
+  <div class="actions">
+    <span>
+      <ion-icon name="{{isLoved? 'md-heart' : 'md-heart-outline'}}" color="{{isLoved? 'danger' : 'green'}}" (click)="toggleLoved()"></ion-icon>
+      1
+    </span>
+    <span>
+      <ion-icon name="md-share-alt"></ion-icon>
+    </span>
+    <span>
+      <ion-icon name="md-chatbubbles"></ion-icon>
+    </span>
+    <!-- <ion-icon name="md-chatboxes"></ion-icon> -->
+  </div>
+</div>

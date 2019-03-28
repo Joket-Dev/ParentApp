@@ -1,0 +1,38 @@
+<ion-header class="nav-header" no-border>
+    <ion-navbar class="navbar" color="primary">
+        <ion-buttons left mode="md">
+            <button menuToggle ion-button icon-only>
+                <img class="menu-icon" src="assets/icon/menu.png">
+            </button>
+        </ion-buttons>
+        <ion-title class="nav-title">Shopping Cart</ion-title>
+        <ion-buttons right>
+            <button ion-button icon-only (click)="openNotificationsPage()">
+                <ion-icon name="ios-notifications-outline" color="white"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+    <div class="extended-nav-color"></div>
+    <div class="overlay-box">
+        <section class="product-list">
+            <product [isInCart]="true" [cartList]="true" *ngFor="let item of cartItems;let i=index;" [data]="item" (valueChange)="cartChanged($event,i)"></product>
+        </section>
+    </div>
+</ion-content>
+
+<ion-footer>
+    <div class="bottom-actions">
+        <div class="total">
+            Total
+            <p>1009 Rs</p>
+        </div>
+        <button (click)="openDetailPage()">
+            <ion-icon name="md-cash"></ion-icon>
+            Checkout
+        </button>
+    </div>
+</ion-footer>

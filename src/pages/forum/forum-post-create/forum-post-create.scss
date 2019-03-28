@@ -1,0 +1,43 @@
+page-forum-post-create {
+  ion-item {
+    padding: 1em 1em !important;
+    margin-bottom: 0 !important;
+  }
+  .item-inner {
+    border: none !important;
+  }
+
+  ion-select, ion-textarea {
+    min-width: 100% !important;
+    border: 2px solid #F6E6D7 !important;
+    border-radius: 0px !important;
+  }
+
+  .select-text {
+    text-align: center;
+  }
+  .select-icon {
+    margin-right: 10px !important;
+  }
+
+  // ion-textarea {
+  //   height: 12em !important;
+  // }
+
+  .attachment {
+    text-align: right;
+    padding-right: 2em;
+
+    ion-icon{
+      color: #D3BDB0;
+      font-weight: bold;
+      margin-left: 5px;
+    }
+  }
+
+  .button {
+    margin-top: 3em;
+    margin-bottom: 3em;
+  }
+
+}

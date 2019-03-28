@@ -1,0 +1,51 @@
+forum-post-item {
+  ion-card{
+    padding: 1em 0.6em !important;
+  }
+
+  .post{
+    display: flex !important;
+    margin-bottom: 0 !important;
+  }
+
+  ion-item{
+    padding: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  ion-label{
+    margin: 0 !important;
+  }
+
+  ion-avatar{
+    min-width: 48px;
+    min-height: 48px;
+  }
+
+  ion-avatar img{
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+
+  .right{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: right;
+    margin: 0 !important;
+  }
+
+  .date{
+    font-size: 0.7em;
+  }
+
+  .info-btn{
+    color: black;
+    padding: 0;
+    background: white;
+    border-radius: 2em;
+    margin-top: 0.8em;
+  }
+}

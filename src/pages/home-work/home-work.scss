@@ -1,0 +1,65 @@
+page-home-work {
+
+  // slider
+
+  .overlay-box {
+    padding-bottom: 2em;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .head {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+
+      .nav-arrow {
+        background: transparent;
+      }
+
+      .info{
+        h1{
+          font-size: 1.2em;
+        }
+      }
+    }
+
+    .slides {
+      padding: 0em 2em;
+    }
+
+    .slide {
+      p{
+        font-size: 0.8em;
+      }
+    }
+  }
+
+  ion-footer{
+
+    ion-item{
+      margin: 0 !important;
+      background: #fe6f3d !important;
+      color: white !important;
+      border-radius: 0px !important;
+
+    }
+    .item-inner{
+      border: none !important;
+      padding: 0 !important;
+    }
+
+    .checkbox-icon{
+      background: white !important;
+    }
+
+    .checkbox-inner{
+      border-color: #fe6f3d !important;
+    }
+  }
+
+
+}

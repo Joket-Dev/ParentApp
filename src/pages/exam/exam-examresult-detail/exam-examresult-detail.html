@@ -1,0 +1,83 @@
+<ion-header class="nav-header" no-border>
+    <ion-navbar class="navbar" color="primary">
+        <ion-buttons left mode="md">
+            <button menuToggle ion-button icon-only>
+                <img class="menu-icon" src="assets/icon/menu.png">
+            </button>
+        </ion-buttons>
+        <ion-title class="nav-title">Result</ion-title>
+        <ion-buttons right>
+            <button ion-button icon-only (click)="openNotificationsPage()">
+                <ion-icon name="ios-notifications-outline" color="white"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+    <!-- <div class="hero-box">
+        <ion-select>
+            <ion-option selected>English</ion-option>
+            <ion-option>Physics</ion-option>
+        </ion-select>
+    </div> -->
+
+    <section class="overlay-box">
+        <div class="head">
+            <button (click)="prevSlide()" icon-only class="nav-arrow">
+                <ion-icon name="md-arrow-back"></ion-icon>
+            </button>
+
+            <div class="info">
+                <h1>
+                    page
+                    {{slider.getActiveIndex() + 1}}
+                    of
+                    {{getSliderLength()}}
+                </h1>
+            </div>
+
+            <button (click)="nextSlide()" icon-only class="nav-arrow">
+                <ion-icon name="md-arrow-forward"></ion-icon>
+            </button>
+        </div>
+        <ion-slides #slides class="slides">
+            <ion-slide class="slide" *ngFor="let i of [0,1,2,3]; i as index">
+                <div>
+                    <img src="assets/placeholders/question-paper.png" (click)="openGallary()">
+                </div>
+            </ion-slide>
+        </ion-slides>
+
+
+    </section>
+
+</ion-content>
+
+<ion-footer>
+    <section class="marks-card" >
+        <div class="progress-percentage-wrapper">
+            <div class="progress-percentage ng-cloak">{{70}}%</div>
+            <round-progress
+                    [current]="70"
+                    [max]="100"
+                    [color]="'#fe6f3d'"
+                    [background]="'#eaeaea'"
+                    [radius]="30"
+                    [stroke]="2"
+                    [duration]="800"
+                    [animation]="'easeInOutQuart'"
+                    [animationDelay]="0">
+            </round-progress>
+        </div>
+
+
+        <div>
+            <h1>Total Marks: 80/100</h1>
+            <h2>Previous Exam: 70/100</h2>
+        </div>
+
+    </section>
+</ion-footer>

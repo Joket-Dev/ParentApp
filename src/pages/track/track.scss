@@ -1,0 +1,59 @@
+page-track {
+  .map-canvas {
+    position: absolute;
+
+    height: 100%;
+    width: 100%;
+
+    background-color: transparent;
+
+    opacity: 0;
+    transition: opacity 150ms ease-in;
+  }
+
+  .show-map {
+    opacity: 1;
+  }
+
+  .map-slider {
+    max-height: 130px;
+    position: absolute;
+    bottom: 16px;
+    margin-left: 8px;
+    margin-right: 8px;
+
+    .info-parent {
+      max-height: 130px;
+      min-height: 130px;
+      background: linear-gradient(180deg, rgba(254, 111, 61, 1) 0%, rgba(255, 102, 102, 1) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      border-radius: 10px;
+      max-width: calc(100% - 16px);
+
+      .info {
+        color: white;
+      }
+    }
+
+
+  }
+
+  .gmnoprint,
+  .gm-style-cc {
+    opacity: 0;
+  }
+
+  h5 {
+    font-size: 1.5rem !important;
+    &.loc{
+      min-height: 80px;
+    }
+  }
+
+  .content-md hr {
+    background-color: white !important;
+}
+}

@@ -1,0 +1,32 @@
+page-forum-posts {
+
+  ion-toolbar {
+    margin-top: -1px !important;
+
+    &.scrollable-segments {
+      ion-segment {
+        display: block;
+        overflow-x: scroll;
+        white-space: nowrap;
+
+        ion-segment-button.segment-button {
+          display: inline-block;
+          width: auto;
+          border-bottom-width: 0px !important;
+
+          &.segment-activated {
+            border-bottom-width: 2px !important;
+          }
+        }
+      }
+    }
+  }
+
+  .post-list {
+    margin-bottom: 8em !important;
+  }
+
+
+
+
+}

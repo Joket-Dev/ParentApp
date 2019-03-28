@@ -1,0 +1,52 @@
+page-complaint-list {
+  .type{
+    padding: 2em 1em;
+  }
+
+  .complaint {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0em 1.5em;
+
+    .title {
+      font-size: 1.2em;
+      opacity: 0.8;
+      text-align: left;
+    }
+    p{
+      font-size: 0.7em;
+      opacity: 0.5;
+    }
+
+    .status{
+      background: rgb(254,111,61);
+      padding: 0.3em 1em;
+      border-radius: 13px;
+      color: white;
+      min-width: 6em;
+      font-size: 0.8em;
+    }
+
+    .close{
+      opacity: 0.4;
+    }
+
+  }
+
+  .footer-btn{
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+    width: 100%;
+    background: white;
+    .button{
+      font-size: 0.8em;
+    }
+  }
+
+
+
+
+}

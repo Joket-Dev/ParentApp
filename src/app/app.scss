@@ -1,0 +1,213 @@
+// http://ionicframework.com/docs/theming/
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+.card-shadow {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.navbar {
+  padding: 2em 2em;
+}
+
+.menu-icon {
+  width: 20px;
+}
+
+.toolbar-title {
+  font-size: 1.3em !important;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.toolbar-background {
+  border-width: 0 !important;
+}
+
+.content {
+  background: rgb(254, 111, 61);
+  background: linear-gradient(180deg, rgba(254, 111, 61, 1) 0%, rgba(255, 102, 102, 1) 100%);
+  text-align: center;
+}
+
+.bg-primary-gradient {
+  background: rgb(254, 111, 61) !important;
+  background: linear-gradient(180deg, rgba(254, 111, 61, 1) 0%, rgba(255, 102, 102, 1) 100%) !important;
+}
+
+.wrapper {
+  padding: 2em !important;
+
+}
+
+.top-margin {
+  margin-top: 1em !important;
+}
+
+.extended-nav-color {
+  height: 2em;
+  background: rgb(254, 111, 61);
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: -1;
+}
+
+.overlay-box {
+  width: 95%;
+  margin: auto;
+  background: white;
+  border-radius: 10px;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.button {
+  padding: 1em 3em;
+  border-radius: 0em;
+  background-color: rgb(254, 111, 61);
+  border: 2px solid #f6e6d7;
+  font-size: 1.3em;
+  color: white;
+  font-weight: bolder;
+  letter-spacing: 2px;
+}
+
+.btn-simple {
+  width: 100%;
+  margin-bottom: 2em;
+  color: rgb(254, 111, 61);
+  padding: 2em 2em;
+  background: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.select-round {
+  padding: 1em 1em 0em 1em !important;
+  margin-bottom: 0 !important;
+
+  .item-inner {
+    border: none !important;
+  }
+
+  ion-select,
+  ion-textarea {
+    min-width: 100% !important;
+    border: 2px solid #F6E6D7 !important;
+    border-radius: 0px !important;
+  }
+
+  .select-text {
+    text-align: center;
+  }
+
+  .select-icon {
+    margin-right: 10px !important;
+  }
+
+  .select-round {
+    margin-bottom: 2em !important;
+  }
+
+}
+
+.school-avatar {
+  img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+
+.custom-list {
+  .detail {
+    color: #c3c3c3 !important;
+  }
+
+  .creater {
+    font-weight: bold;
+    font-size: 14px;
+  }
+}
+
+.list-border {
+  border-bottom: 1px solid #c3c3c3;
+}
+
+.sub-header {
+  display: inline;
+
+  .actions {
+    margin-top: -1.2em;
+    text-align: right;
+  }
+}
+
+ion-toolbar {
+  margin-top: -1px;
+
+  &.toolbar-md {
+    height: 57px;
+  }
+}
+
+.gallary {
+  .image-grid {
+    height: 45vw;
+    width: 42vw;
+  }
+}
+
+
+.profile {
+  background: url('../assets/imgs/userimg.jpg') !important;
+  background-size: cover !important;
+}
+
+ion-item.select-round.item-input-has-value ion-select {
+  border: 2px solid rgb(254, 111, 61) !important;
+}
+
+.tab-buttons {
+  super-tab-button {
+    padding: 0px 8px !important;
+    color: #f4f4f4 !important;
+    height: 4.2rem !important;
+
+    span.title {
+      font-size: 1.3rem !important;
+    }
+
+    // &.selected {
+    //   border-color: #f4f4f4;
+    //   border-bottom-width: 2px !important;
+    //   border-bottom-style: solid;
+    // }
+  }
+}
+
+super-tabs-toolbar>ion-toolbar.toolbar {
+  max-height: 50px !important;
+}

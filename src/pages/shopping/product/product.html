@@ -1,0 +1,29 @@
+<div class="product">
+  <div class="img-box" (click)="openGallary()">
+    <img [src]="data.image">
+  </div>
+  <div class="desc">
+    <p class="pname">{{data.name}}</p>
+    <p class="primary">{{data.price}}</p>
+    <ion-item class="qty">
+      <ion-label class="cart-btn remove">
+        <ion-icon ios="ios-remove" md="md-remove" (click)="data.qty > 1 && data.qty=data.qty-1;valueChanged(data)"></ion-icon>
+      </ion-label>
+      <ion-label style="min-width: 90px;
+      text-align: center;"><span >{{data.qty}}</span></ion-label>
+      <ion-label class="cart-btn add" (click)="data.qty=data.qty+1;valueChanged(data)">
+        <ion-icon ios="ios-add" md="md-add"></ion-icon>
+      </ion-label>
+      <!-- <ion-select *ngIf="!cartList">
+        <ion-option value="1" selected>1</ion-option>
+        <ion-option value="2">2</ion-option>
+      </ion-select> -->
+    </ion-item>
+    <div style="width: 100%;text-align: right;">
+      <!-- <button class="action" *ngIf="!isInCart" (click)="addToCart()">Add To Cart</button> -->
+      <button class="action remove-btn" *ngIf="cartList || isInCart" (click)="removeFromCart()">
+        <ion-icon ios="ios-close" md="md-close"></ion-icon>
+      </button>
+    </div>
+  </div>
+</div>
